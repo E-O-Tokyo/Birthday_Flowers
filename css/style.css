@@ -1,37 +1,53 @@
 body {
   font-family: "Sawarabi Mincho";
-  max-width: 1200px;
-  min-width: 300px;
+  height: 100%;
+  width:100%;
+  //max-width: 1200px;
+  //min-width: 300px;
+  //min-height: 540px;
+  //max-height: 1000px;
   background-color: #fff3f0;
+  margin:auto;
 }
 
 .header {
-  width: 100%;
-  display: inline-block;
+  height: 25px;
+  margin: 27px 20px 42px;
 }
 
 .service_title {
   font-size: 25px;
   color: #36563c;
-  float: left;
-  padding: 27px 42px 42px;
+  display: inline;
+  text-align: left;
 }
 
 .calendar {
-  float: right;
-  padding: 27px 42px 42px;
+  display: inline;
+  vertical-align: baseline;
+}
+
+article {
+  max-width: 1200px;
+  min-width: 300px;
+  min-height: 540px;
+  max-height: 1000px;
+}
+
+.content-title {
+
 }
 
 h1 {
-text-align: center;
-font-size: 15px;
-color: #9b6e23;
+  text-align: center;
+  font-size: 15px;
+  color: #9b6e23;
+
 }
 
 ul.flowers-image  {
-display:table;
+display: table;
 list-style-type: none;
-width: 100%;
 }
 
 ul.flowers-image li{
@@ -39,20 +55,34 @@ display:table-cell;
 vertical-align:middle;
 }
 
-footer {
-  display: inline-block;
-  text-align: center;
-  width: auto;
-  color: #dbd5d5;
+.image_box {
+  overflow: hidden;
+  width: 77px;
+  height: 300px;
+  padding: 0 3px;
 }
 
-.footer {
-  text-align: center;
-  float: left;
+footer {
   border-top: 1px solid #dbd5d5;
   font-size: 12px;
+  width: 100%;
+  color: #dbd5d5;
+  height: 30px;
+  display: inline-block;
+  box-sizing: border-box;
+  vertical-align: middle;
 }
 
-.credit {
-  font-size: 12px;
+ul.credit li{
+  list-style-type: none;
+  display: inline-block;
+}
+
+.serviceName {
+  display: inline;
+}
+
+.copyright {
+  display: inline;
+  padding-left: 15px;
 }
