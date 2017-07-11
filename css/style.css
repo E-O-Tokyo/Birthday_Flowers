@@ -1,0 +1,58 @@
+body {
+  font-family: "Sawarabi Mincho";
+  max-width: 1200px;
+  min-width: 300px;
+  background-color: #fff3f0;
+}
+
+.header {
+  width: 100%;
+  display: inline-block;
+}
+
+.service_title {
+  font-size: 25px;
+  color: #36563c;
+  float: left;
+  padding: 27px 42px 42px;
+}
+
+.calendar {
+  float: right;
+  padding: 27px 42px 42px;
+}
+
+h1 {
+text-align: center;
+font-size: 15px;
+color: #9b6e23;
+}
+
+ul.flowers-image  {
+display:table;
+list-style-type: none;
+width: 100%;
+}
+
+ul.flowers-image li{
+display:table-cell;
+vertical-align:middle;
+}
+
+footer {
+  display: inline-block;
+  text-align: center;
+  width: auto;
+  color: #dbd5d5;
+}
+
+.footer {
+  text-align: center;
+  float: left;
+  border-top: 1px solid #dbd5d5;
+  font-size: 12px;
+}
+
+.credit {
+  font-size: 12px;
+}
