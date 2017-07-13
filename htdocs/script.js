@@ -7,7 +7,6 @@ $(function(){
   $("#modal-overlay").fadeIn("slow");
 
 
-
   centeringModalSyncer();
 
   $("#introduction_Modal").fadeIn("slow");
@@ -28,4 +27,64 @@ $(function(){
     //ここの文章抜いた
 
   }
+});
+
+
+$(function(){
+  var nowModalSyncer=null;
+  var modalClassSyncer="modal-syncer";
+
+  var modals=document.getElementsByClassName(modalClassSyncer);
+
+  for(var i=0, l=modals.length; l>i; i++){
+
+    modals[i].onclick =function(){
+
+      this.blur();
+
+    var target=this.getAttribute("data-target");
+
+  if(typeof(target)=="undefined" ||!target||target==null){
+    return false;
+  }
+nowModalSyncer=document.getElementById(target);
+if(nowModalSyncer==null){
+  return false;
+}
+
+$("body").append('<div id="modal-overlay-01"></div>');
+$("#modal-overlay-01").fadeIn("fast");
+
+centeringModalSyncer();
+
+$(nowModalSyncer).fadeIn("slow");
+
+$("#modal-overlay-01,#modal-close-01").unbind().click(function(){
+
+  $("#"+target+",modal-overlay-01").fadeOut("fast",function(){
+
+    $('#modal-overlay-01').remove();
+
+  });
+
+  nowModalSyncer=null;
+});
+
+}
+
+}
+$(window).resize( centeringModalSyncer);
+
+function centeringModalSyncer(){
+  if(nowModalSyncer==null)
+  return false;
+
+  var w=$(window).width();
+  var h=$(window).height();
+
+  var cw=$(nowModalSyncer).outerWidth();
+  var ch=$(nowModalSyncer).outerHeight();
+
+  $(nowModalSyncer).css({"left": ((w-cw)/2)+"px","top":((h-ch)/2)+"px"});
+}
 });
