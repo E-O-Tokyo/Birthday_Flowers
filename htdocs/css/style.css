@@ -10,7 +10,6 @@ body {
 .header {
   margin: 27px auto 42px;
   overflow: hidden;
-  max-width: 1200px;
   padding: 0 10% 0;
   position: relative;
 }
@@ -23,14 +22,11 @@ body {
 }
 
 .calendar {
-  display: block;
-  margin-right: 10%;
   float: right;
-  position:absolute;
-  top: 55%;
-  right: 0;
-  transform: translateY(-50%);
+  transform: translateY(25%);
 }
+
+
 
 .modal-part{
   width: 100%;
@@ -38,19 +34,19 @@ body {
 }
 
 #introduction_Modal{
-	width: 50%;
+	width: 100vw;
 	margin: 0;
 	border:2px solid #aaa;
 	background:#ded5d2;
 	z-index:2;
   position:absolute;
   text-align: center;
-  left: 25%;
   color: #fff3f0;
+  top: 25%;
 }
 
 .introduction_Modal-p{
-	margin-top:1em;
+	margin:1em;
 }
 
 .introduction_Modal-p:first-child{
@@ -59,9 +55,9 @@ body {
 
 .button-link{
 	color:#00f;
-  padding: 5px;
+  padding: 10px;
   box-sizing: border-box;
-  border: 1px solid #fff
+  border: 1px solid #fff;;
 }
 
 .button-link:hover{
@@ -92,7 +88,7 @@ section.flowersGallery{
   overflow: hidden;
 }
 .box{
-    width: 100%;
+    width: 100vw;
     white-space: nowrap;
     padding: 0;
     margin: 0;
@@ -112,7 +108,7 @@ vertical-align:middle;
 .image_box {
   overflow: hidden;
   width: 77px;
-  height: 100%;
+  height: 100vw;
   padding: 0 3px;
   margin: 0;
 }
@@ -121,8 +117,12 @@ vertical-align:middle;
   text-align: center;
 }
 
+.image {
+  width: 50vw;
+}
+
 .modal-content {
-  width: 50%;
+  width: 50vw;
   margin: 0;
   padding: 10px 20px;
   background: #fff3f0;
@@ -131,16 +131,6 @@ vertical-align:middle;
   z-index: 2;
 }
 
-#modal-overlay-01 {
-	z-index: 1 ;
-	display: none ;
-	position: fixed ;
-	top: 0 ;
-	left: 0 ;
-	width: 100% ;
-	height: 120% ;
-	background-color: rgba( 0,0,0, 0.75 ) ;
-}
 
 .button-link-01 {
 	color: #00f ;

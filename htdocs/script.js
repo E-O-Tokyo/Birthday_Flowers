@@ -52,18 +52,18 @@ if(nowModalSyncer==null){
   return false;
 }
 
-$("body").append('<div id="modal-overlay-01"></div>');
-$("#modal-overlay-01").fadeIn("fast");
+$("body").append('<div id="modal-overlay"></div>');
+$("#modal-overlay").fadeIn("fast");
 
 centeringModalSyncer();
 
 $(nowModalSyncer).fadeIn("slow");
 
-$("#modal-overlay-01,#modal-close-01").unbind().click(function(){
+$("#modal-overlay,#modal-close-01").unbind().click(function(){
 
-  $("#"+target+",modal-overlay-01").fadeOut("fast",function(){
+  $("#"+target+",modal-overlay").fadeOut("fast",function(){
 
-    $('#modal-overlay-01').remove();
+    $('#modal-overlay').remove();
 
   });
 
