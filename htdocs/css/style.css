@@ -93,6 +93,8 @@ section.flowersGallery{
     padding: 0;
     margin: 0;
     overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
+    overflow-scrolling: touch;
 }
 
 ul.flowers-image  {
