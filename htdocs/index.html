@@ -6,11 +6,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="あの人の誕生花はなんですか？ 花の写真と花言葉のメッセージを送ろう！">
   <meta name="keywords" content="誕生日, 誕生花, 花言葉, メッセージ, 花">
+  <meta property="og:url"           content="http://www.your-domain.com/your-page.html" />
+  <meta property="og:type"          content="website" />
+  <meta property="og:title"         content="BirthdayFlowers" />
+  <meta property="og:description"   content="Your description(ここに花言葉を入れる？)" />
+
+  <meta property="og:image"         content="http://www.your-domain.com/path/image.jpg" />
   <title>BirthdayFlowers</title>
   <link rel="stylesheet" href="css/style.css" type="text/css">
   <link href="https://fonts.googleapis.com/earlyaccess/sawarabimincho.css" rel="stylesheet" />
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
   <script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="js/jquery.cookie.js"></script>
 </head>
 
 <body>
@@ -69,6 +76,9 @@
 <div id="modal-content-01" class="modal-content">
   <img src="img/sozai/0101.jpg" alt="" class="image">
   <p>フクジュソウ<br>花言葉：幸せを招く</p>
+  <a class="facebook-share-btn" href="http://www.facebook.com/share.php?u=[共有したいURL]" onclick="window.open(this.href, 'FBwindow', 'width=650, height=450, menubar=no, toolbar=no, scrollbars=yes'); return false;">Facebookで花を贈ろう！</a>
+  <a class="twitter-share-btn" href="https://twitter.com/share" data-url="共有したいURL" data-text="ツイートされる内容">Twitterで花を贈ろう！</a>
+  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
   <p><a id="modal-close-01" class="button-link-01">CLOSE</a></p>
 </div>
 <div id="modal-content-02" class="modal-content">
@@ -177,6 +187,13 @@
   <p>リカステ<br>花言葉：快活</p>
   <p><a id="modal-close-01" class="button-link-01">CLOSE</a></p>
 </div>
+
+<a class="facebook-share-btn" href="http://www.facebook.com/share.php?u=[共有したいURL]" onclick="window.open(this.href, 'FBwindow', 'width=650, height=450, menubar=no, toolbar=no, scrollbars=yes'); return false;">Facebookで花を贈ろう！</a>
+
+
+
+<a class="twitter-share-btn" href="https://twitter.com/share" data-url="共有したいURL" data-text="ツイートされる内容">Twitterで花を贈ろう！</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 
 <footer>
   <div class="credit">

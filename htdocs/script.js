@@ -88,3 +88,13 @@ function centeringModalSyncer(){
   $(nowModalSyncer).css({"left": ((w-cw)/2)+"px","top":((h-ch)/2)+"px"});
 }
 });
+
+var period = 7;
+$(function(){
+  if($.cookie("access") == undefined){
+$.cookie("access", "on", { expires: period});
+$("introduction_Modal");
+  }
+  else{
+  }
+});
