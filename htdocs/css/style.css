@@ -110,7 +110,7 @@ vertical-align:middle;
 .image_box {
   overflow: hidden;
   width: 77px;
-  height: 100vw;
+  height: 300px;
   padding: 0 3px;
   margin: 0;
 }
@@ -120,13 +120,13 @@ vertical-align:middle;
 }
 
 .image {
-  width: 50vw;
+  width: 100vw;
 }
 
 .modal-content {
-  width: 50vw;
+  width: 100vw;
   margin: 0;
-  padding: 10px 20px;
+  padding: 0px 0px 10px;
   background: #fff3f0;
   position: fixed;
   display: none;
@@ -142,6 +142,26 @@ vertical-align:middle;
 .button-link-01:hover {
 	cursor: pointer ;
 	color: #f00 ;
+}
+
+.btn {
+  padding: 5px;
+  color: #fff;
+  display: inline-block;
+  border-radius: 4px;
+  font-size: 10px;
+}
+
+.facebook-share {
+  background-color: #3b5998;
+}
+
+.twitter-share {
+  background-color: #55acee;
+}
+
+.fa {
+  margin-right: 5px;
 }
 
 footer {

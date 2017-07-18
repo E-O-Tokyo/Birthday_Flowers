@@ -89,12 +89,22 @@ function centeringModalSyncer(){
 }
 });
 
-var period = 7;
-$(function(){
-  if($.cookie("access") == undefined){
-$.cookie("access", "on", { expires: period});
-$("introduction_Modal");
-  }
-  else{
-  }
-});
+window.onload = function exec() {
+  var date=new Date();
+
+  var year=date.getFullYear();
+  var month=date.getMonth();
+  var day=date.getDate();
+
+  month = ('0'+month).slice(-2);
+  day = ('0'+day).slice(-2);
+
+  format = 'YYYY-MM-DD';
+  format = format.replace(/YYYY/g, year);
+  format = format.replace(/MM/g, month);
+  format =format.replace(/DD/g, day);
+
+  target=document.getElementById("timeframe");
+  target.innerHTML = format;
+
+}
