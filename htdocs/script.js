@@ -52,18 +52,18 @@ if(nowModalSyncer==null){
   return false;
 }
 
-$("body").append('<div id="modal-overlay"></div>');
-$("#modal-overlay").fadeIn("fast");
+$("body").append('<div id="modal-overlay-01"></div>');
+$("#modal-overlay-01").fadeIn("fast");
 
 centeringModalSyncer();
 
 $(nowModalSyncer).fadeIn("slow");
 
-$("#modal-overlay,#modal-close-01").unbind().click(function(){
+$("#modal-overlay-01,#modal-close-01").unbind().click(function(){
 
-  $("#"+target+",modal-overlay").fadeOut("fast",function(){
+  $("#"+target+",modal-overlay-01").fadeOut("fast",function(){
 
-    $('#modal-overlay').remove();
+    $('#modal-overlay-01').remove();
 
   });
 
@@ -93,7 +93,7 @@ window.onload = function exec() {
   var date=new Date();
 
   var year=date.getFullYear();
-  var month=date.getMonth();
+  var month=date.getMonth()+1;
   var day=date.getDate();
 
   month = ('0'+month).slice(-2);
@@ -106,5 +106,10 @@ window.onload = function exec() {
 
   target=document.getElementById("timeframe");
   target.innerHTML = format;
-
 }
+
+$.ajax({
+  type:"get",
+  url:"test.json",
+  
+})

@@ -2,187 +2,156 @@
 "January": [
  {
   "date":"01",
-  "month":"January",
   "name":"フクジュソウ",
   "word":"花言葉：幸せを招く"
  },
  {
   "date":"02",
-  "month":"January",
   "name":"ハルサザンカ",
   "word":"花言葉：困難に勝つ"
  },
  {
   "date":"03",
-  "month":"January",
   "name":"ストレリチア",
   "word":"花言葉：ひとり占め"
  },
  {
   "date":"04",
-  "month":"January",
   "name":"ブルースター",
   "word":"花言葉：幸せな愛"
  },
  {
   "date":"05",
-  "month":"January",
   "name":"ラッパスイセン",
   "word":"花言葉：再生"
  },
  {
   "date":"06",
-  "month":"January",
   "name":"カーネーション（ピンク）",
   "word":"花言葉：熱愛"
  },
  {
   "date":"07",
-  "month":"January",
   "name":"アッツザクラ",
   "word":"花言葉：愛を待つ"
  },
  {
   "date":"08",
-  "month":"January",
   "name":"マンリョウ",
   "word":"花言葉：予言"
  },
  {
   "date":"09",
-  "month":"January",
   "name":"ユキワリソウ",
   "word":"花言葉：期待"
  },
  {
   "date":"10",
-  "month":"January",
   "name":"ナワシロイチゴ",
   "word":"花言葉：恩恵"
  },
  {
   "date":"11",
-  "month":"January",
   "name":"コチョウラン（白）",
   "word":"花言葉：愛をあなたへ"
  },
  {
   "date":"12",
-  "month":"January",
   "name":"カンツバキ",
   "word":"花言葉：謙譲"
  },
  {
   "date":"13",
-  "month":"January",
   "name":"マンサク",
   "word":"花言葉：新鮮"
  },
  {
   "date":"14",
-  "month":"January",
   "name":"ブルーデイジー",
   "word":"花言葉：恵まれて"
  },
  {
   "date":"15",
-  "month":"January",
   "name":"ポピー",
   "word":"花言葉：やすらぎ"
  },
  {
   "date":"16",
-  "month":"January",
   "name":"オキザリス",
   "word":"花言葉：ひたむきな愛"
  },
  {
   "date":"17",
-  "month":"January",
   "name":"スイカズラ",
   "word":"花言葉：愛の絆"
  },
  {
   "date":"18",
-  "month":"January",
   "name":"グズマニア",
   "word":"花言葉：完璧"
  },
  {
   "date":"19",
-  "month":"January",
   "name":"ストック（八重）",
   "word":"花言葉：永遠の美"
  },
  {
   "date":"20",
-  "month":"January",
   "name":"スイートピー",
   "word":"花言葉：永遠の喜び"
  },
  {
   "date":"21",
-  "month":"January",
   "name":"スイセン",
   "word":"花言葉：自己愛"
  },
  {
   "date":"22",
-  "month":"January",
   "name":"リカステ",
   "word":"花言葉：快活"
  },
  {
   "date":"23",
-  "month":"January",
   "name":"オウバイ",
   "word":"花言葉：高貴"
  },
  {
   "date":"24",
-  "month":"January",
   "name":"ヒヤシンス（紫）",
   "word":"花言葉：優しくかわいい"
  },
  {
   "date":"25",
-  "month":"January",
   "name":"チューリップ（黄）",
   "word":"花言葉：正直"
  },
  {
   "date":"26",
-  "month":"January",
   "name":"ピグミーランタン",
   "word":"花言葉：印象"
  },
  {
   "date":"27",
-  "month":"January",
   "name":"マダガスカルジャスミン",
   "word":"花言葉：自意識"
  },
  {
   "date":"28",
-  "month":"January",
   "name":"キンギョソウ",
   "word":"花言葉：欲望"
  },
  {
   "date":"29",
-  "month":"January",
   "name":"スミレ",
   "word":"花言葉：誠実な愛"
  },
  {
   "date":"30",
-  "month":"January",
   "name":"サクラソウ",
   "word":"花言葉：忠実"
  },
  {
   "date":"31",
-  "month":"January",
   "name":"ウメ（白）",
   "word":"花言葉：澄んだ心"
  }
@@ -193,7 +162,6 @@
 "February": [
  {
   "date":"01",
-  "month":"January",
   "name":"フクジュソウ",
   "word":"幸せを招く"
  },
@@ -205,7 +173,6 @@
 "March": [
  {
   "date":"01",
-  "month":"January",
   "name":"フクジュソウ",
   "word":"幸せを招く"
  },
@@ -217,7 +184,6 @@
 "April": [
  {
   "date":"01",
-  "month":"January",
   "name":"フクジュソウ",
   "word":"幸せを招く"
  },
@@ -229,7 +195,6 @@
 "May": [
  {
   "date":"01",
-  "month":"January",
   "name":"フクジュソウ",
   "word":"幸せを招く"
  },
@@ -241,7 +206,6 @@
 "June": [
  {
   "date":"01",
-  "month":"January",
   "name":"フクジュソウ",
   "word":"幸せを招く"
  },
@@ -253,7 +217,6 @@
 "July": [
  {
   "date":"01",
-  "month":"January",
   "name":"フクジュソウ",
   "word":"幸せを招く"
  },
@@ -265,7 +228,6 @@
 "August": [
  {
   "date":"01",
-  "month":"January",
   "name":"フクジュソウ",
   "word":"幸せを招く"
  },
@@ -277,7 +239,6 @@
 "September": [
  {
   "date":"01",
-  "month":"January",
   "name":"フクジュソウ",
   "word":"幸せを招く"
  },
@@ -289,7 +250,6 @@
 "October": [
  {
   "date":"01",
-  "month":"January",
   "name":"フクジュソウ",
   "word":"幸せを招く"
  },
@@ -301,7 +261,6 @@
 "November": [
  {
   "date":"01",
-  "month":"January",
   "name":"フクジュソウ",
   "word":"幸せを招く"
  },
@@ -313,7 +272,6 @@
 "December": [
  {
   "date":"01",
-  "month":"January",
   "name":"フクジュソウ",
   "word":"幸せを招く"
  },
