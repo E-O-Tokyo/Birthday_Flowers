@@ -1,0 +1,46 @@
+[{
+  month:1,
+  items:[]
+},
+{
+
+}
+]
+
+
+[{
+"month": "January",
+ items:[
+   {
+  "date":"01",
+  "name":"フクジュソウ",
+  "word":"花言葉：幸せを招く"
+ },
+}]
+}]
+
+
+
+console.log("test");
+
+$(function(){
+  $("#modal-close").click(function(){
+    $("box").keyframes({
+      '50%': {
+        translateX:250,
+        rotate:0
+      },
+
+      '100%': {
+        translateX:500,
+        rotate:360
+      }
+    },
+    {
+      duration: 2000,
+      easing: 'ease',
+      count: 2,
+      direction: 'alternate'
+    });
+  });
+});

@@ -39,7 +39,7 @@
   </div>
   <section class="flowersGallery">
     <div id="gallery">
-    <div class="box">
+    <div class="box" id="box">
 <ul class="flowers-image">
   <li><a class="modal-syncer button-link-01" data-target="modal-content-01" title="フクジュソウ"><div class="image_box"><img src="img/resize/0101_resize.jpg" alt="" class="image"></a><p class="date">01</p></div></li>
   <li><a class="modal-syncer button-link-01" data-target="modal-content-02" title="フクジュソウ"><div class="image_box"><img src="img/resize/0102_resize.jpg" alt="" class="image"></a><p class="date">02</p></div></li>
@@ -68,12 +68,10 @@
 </div>
  </section>
   <div class="flowerName"></div>
-  <div class="flowerDate"></div>
-  <div class="scrollbar"></div>
 </article>
 
 <div id="modal-content-01" class="modal-content">
-  <img src="img/modal-photo/modal-photo-0101.jpg" alt="" class="modal-image">
+    <a id="modal-close-01" class="button-link-01"><img src="img/modal-photo/modal-photo-0101.jpg" alt="" class="modal-image"><img src="img/CLOSE-btn5.png" alt="" class="CLOSE-btn"></a>
   <p>フクジュソウ<br>花言葉：幸せを招く</p>
   <a class="facebook-share btn" href="http://www.facebook.com/share.php?u=[共有したいURL]" onclick="window.open(this.href, 'FBwindow', 'width=650, height=450, menubar=no, toolbar=no, scrollbars=yes'); return false;"><span class="fa fa-facebook"></span>Facebookで花を贈ろう！</a>
   <a class="twitter-share btn" href="https://twitter.com/share" data-url="共有したいURL" data-text="ツイートされる内容"><span class="fa fa-twitter"></span>Twitterで花を贈ろう！</a>
@@ -82,46 +80,37 @@
 <div id="modal-content-02" class="modal-content">
   <img src="img/modal-photo/modal-photo-0102.jpg" alt="" class="modal-image">
   <p>ハルサザンカ<br>花言葉：困難に勝つ</p>
-  <p><a id="modal-close-01" class="button-link-01">CLOSE</a></p>
 </div>
 <div id="modal-content-03" class="modal-content">
   <img src="img/modal-photo/modal-photo-0103.jpg" alt="" class="modal-image">
-  <p>ストレリチア<br>花言葉：ひとり占め
-</p>
-  <p><a id="modal-close-01" class="button-link-01">CLOSE</a></p>
+  <p>ストレリチア<br>花言葉：ひとり占め</p>
 </div>
 <div id="modal-content-04" class="modal-content">
   <img src="img/modal-photo/modal-photo-0104.jpg" alt="" class="modal-image">
   <p>ブルースター<br>花言葉：幸せな愛</p>
-  <p><a id="modal-close-01" class="button-link-01">CLOSE</a></p>
 </div>
 <div id="modal-content-05" class="modal-content">
   <img src="img/modal-photo/modal-photo-0105.jpg" alt="" class="modal-image">
   <p>ブルースター<br>花言葉：幸せな愛</p>
-  <p><a id="modal-close-01" class="button-link-01">CLOSE</a></p>
 </div>
 <div id="modal-content-06" class="modal-content">
   <img src="img/modal-photo/modal-photo-0106.jpg" alt="" class="modal-image">
   <p>ブルースター<br>花言葉：幸せな愛</p>
-  <p><a id="modal-close-01" class="button-link-01">CLOSE</a></p>
 </div>
 <div id="modal-content-07" class="modal-content">
   <img src="img/modal-photo/modal-photo-0107.jpg" alt="" class="modal-image">
   <p>ブルースター<br>花言葉：幸せな愛</p>
-  <p><a id="modal-close-01" class="button-link-01">CLOSE</a></p>
 </div>
 <div id="modal-content-08" class="modal-content">
   <img src="img/modal-photo/modal-photo-0108.jpg" alt="" class="modal-image">
   <p>ブルースター<br>花言葉：幸せな愛</p>
-  <p><a id="modal-close-01" class="button-link-01">CLOSE</a></p>
 </div>
 <div id="modal-content-09" class="modal-content">
   <img src="img/modal-photo/modal-photo-0109.jpg" alt="" class="modal-image">
   <p>ブルースター<br>花言葉：幸せな愛</p>
-  <p><a id="modal-close-01" class="button-link-01">CLOSE</a></p>
 </div>
-<div id="modal-overlay-01"><img src="img/CLOSE-btn2.jpeg" alt="" class="CLOSE-btn"></div>
-<p><a id="modal-close-01" class="button-link-01"></a></p>
+<div id="modal-overlay-01"></div>
+<p></p>
 
 <div>今日の日にち：<span id="timeframe"></span></div>
 

@@ -61,10 +61,9 @@ $(nowModalSyncer).fadeIn("slow");
 
 $("#modal-overlay-01,#modal-close-01").unbind().click(function(){
 
-  $("#"+target+",modal-overlay-01").fadeOut("fast",function(){
+  $("#" + target + ",#modal-overlay-01").fadeOut("fast",function(){
 
-    $('#modal-overlay-01').remove();
-
+    // $('#modal-overlay-01').remove(); いちいち消す必要がない
   });
 
   nowModalSyncer=null;
@@ -89,6 +88,8 @@ function centeringModalSyncer(){
 }
 });
 
+
+
 window.onload = function exec() {
   var date=new Date();
 
@@ -108,8 +109,23 @@ window.onload = function exec() {
   target.innerHTML = format;
 }
 
+$(window).load(function() {
+  $('.modal-content').flexslider({
+    animation: "slide"
+  });
+});
+
+
+
 $.ajax({
-  type:"get",
-  url:"test.json",
-  
-})
+	url: 'test.json',
+	dataType: 'json',
+	data: {name: 'name'},
+	success: function(data){
+		var dataArray = data.January;
+
+		$.each(dataArray, function(i){
+			$(".flowerName").append(dataArray[i].name);
+		});
+	}
+});
