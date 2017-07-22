@@ -1,29 +1,30 @@
 [{
-  month:1,
-  items:[]
+		month: 1,
+		items: []
 },
-{
+	{
 
 }
 ]
 
 
 [{
-"month": "January",
- items:[
-   {
-  "date":"01",
-  "name":"フクジュソウ",
-  "word":"花言葉：幸せを招く"
+		"month": "January",
+		items: [
+			{
+				"date": "01",
+				"name": "フクジュソウ",
+				"word": "花言葉：幸せを招く"
  },
-]},
-{
-  "month": "February",
-  items:[
-    {
-    "date":"01",
-    "name":"フクジュソウ",
-    "word":"花言葉：幸せを招く"
+]
+	},
+	{
+		"month": "February",
+		items: [
+			{
+				"date": "01",
+				"name": "フクジュソウ",
+				"word": "花言葉：幸せを招く"
   },
 
   ]
@@ -34,44 +35,43 @@
 
 console.log("test");
 
-$(function(){
-  $("#modal-close").click(function(){
-    $("box").keyframes({
-      '50%': {
-        translateX:250,
-        rotate:0
-      },
+$(function () {
+	$("#modal-close").click(function () {
+		$("box").keyframes({
+			'50%': {
+				translateX: 250,
+				rotate: 0
+			},
 
-      '100%': {
-        translateX:500,
-        rotate:360
-      }
-    },
-    {
-      duration: 2000,
-      easing: 'ease',
-      count: 2,
-      direction: 'alternate'
-    });
-  });
+			'100%': {
+				translateX: 500,
+				rotate: 360
+			}
+		}, {
+			duration: 2000,
+			easing: 'ease',
+			count: 2,
+			direction: 'alternate'
+		});
+	});
 });
 
 
-$(window).load(function() {
-  $('.modal-content').flexslider({
-    animation: "slide"
-  });
+$(window).load(function () {
+	$('.modal-content').flexslider({
+		animation: "slide"
+	});
 });
 
 
 $.ajax({
 	url: 'test.json',
 	dataType: 'json',
-	success: function(data){
-    console.log("data",data);
+	success: function (data) {
+		console.log("data", data);
 		var dataArray = data.month;
 
-		$.each(dataArray, function(i){
+		$.each(dataArray, function (i) {
 			$(".flowerName").append(dataArray[i].name);
 		});
 	}
@@ -79,17 +79,62 @@ $.ajax({
 
 
 {
-    "months": [
-        {
-            "month": "January",
-            "items": [
-                {
-                    "date": "01",
-                    "name": "フクジュソウ",
-                    "word": "花言葉：幸せを招く"
+	"year": [
+		{
+			"month": "January",
+			"items": [
+				{
+					"date": "01",
+					"name": "フクジュソウ",
+					"word": "花言葉：幸せを招く"
                 },
 
             ]
         }
     ]
+}
+
+{
+	"allMonth": [
+		{
+			"month": "January",
+			"items": [
+				{
+					"date": "01",
+					"name": "フクジュソウ",
+					"word": "花言葉：幸せを招く"
+                },
+
+            ]
+        }
+    ]
+}
+
+function centeringModalSyncer() {
+	var w = $(window).width();
+	var h = $(window).height();
+
+	//ここの文章抜いた
+
+}
+
+addList();
+
+});
+
+function addList() {
+	var html = "";
+	for (var day_i = 1; day_i < 31; day_i++) {
+		var paddingDay = ('0' + day_i).slice(-2);
+		var list = '<li>' +
+			'<div class="image_box">' +
+			'<a class="modal-syncer button-link-01" data-target="modal-content-' + paddingDay + '" title="フクジュソウ">' +
+			'<img src="img/resize/01' + paddingDay + '_resize.jpg" alt="" class="image">' +
+			'</a>' +
+			'<p class="date">' + paddingDay + '</p>' +
+			'</div>' +
+			'</li>';
+		html += list;
+	}
+	$(".flowers-image").html(html);
 }

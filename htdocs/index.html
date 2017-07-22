@@ -1,131 +1,267 @@
 <!DOCTYPE html>
 <html lang="ja">
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <meta name="description" content="あの人の誕生花はなんですか？ 花の写真と花言葉のメッセージを送ろう！">
-  <meta name="keywords" content="誕生日, 誕生花, 花言葉, メッセージ, 花">
-  <meta property="og:url"           content="http://www.your-domain.com/your-page.html" />
-  <meta property="og:type"          content="website" />
-  <meta property="og:title"         content="BirthdayFlowers" />
-  <meta property="og:description"   content="Your description(ここに花言葉を入れる？)" />
-  <meta property="og:image"         content="http://www.your-domain.com/path/image.jpg" />
-  <title>BirthdayFlowers</title>
-  <link rel="stylesheet" type="text/css" href="css/style.css">
-  <link href="https://fonts.googleapis.com/earlyaccess/sawarabimincho.css" rel="stylesheet" />
-  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-  <script type="text/javascript" src="jquery-3.2.1.min.js"></script>
-  <script type="text/javascript" src="jquery.cookie.js"></script>
-</head>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="description" content="あの人の誕生花はなんですか？ 花の写真と花言葉のメッセージを送ろう！">
+    <meta name="keywords" content="誕生日, 誕生花, 花言葉, メッセージ, 花">
+    <meta property="og:url" content="http://www.your-domain.com/your-page.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="BirthdayFlowers" />
+    <meta property="og:description" content="Your description(ここに花言葉を入れる？)" />
+    <meta property="og:image" content="http://www.your-domain.com/path/image.jpg" />
+    <title>BirthdayFlowers</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link href="https://fonts.googleapis.com/earlyaccess/sawarabimincho.css" rel="stylesheet" />
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="jquery.cookie.js"></script>
+  </head>
 
-<body>
-<header class="header">
-  <div class="service_title">BirthdayFlowers</div>
-    <img src="img/free_schedule.png" alt="" class="calendar">
-</header>
-<div class="modal-part">
-<div id="introduction_Modal">
-	<p>BirthdayFlowers</p>
-  <p>あの人の誕生花はなんですか？</p>
-  <p class="message">花の写真と花言葉の<br>メッセージを送ろう！</p>
-	<p><a id="modal-close" class="button-link">START</a></p>
-</div></div>
-<div id="modal-overlay"></div>
+  <body>
+    <header class="header">
+      <div class="service_title">BirthdayFlowers</div>
+      <img src="img/free_schedule.png" alt="" class="calendar">
+    </header>
+    <div class="modal-part">
+      <div id="introduction_Modal">
+        <p>BirthdayFlowers</p>
+        <p>あの人の誕生花はなんですか？</p>
+        <p class="message">花の写真と花言葉の<br>メッセージを送ろう！</p>
+        <p><a id="modal-close" class="button-link">START</a></p>
+      </div>
+    </div>
+    <div id="modal-overlay"></div>
 
 
-<article class="contents">
-  <div class="content-title"><h1>あの人の誕生日に<br>花の写真と花言葉のメッセージを送ろう</h1>
+    <article class="contents">
+      <div class="content-title">
+        <h1>あの人の誕生日に<br>花の写真と花言葉のメッセージを送ろう</h1>
+      </div>
+      <section class="flowersGallery">
+        <div id="gallery">
+          <div class="box" id="box">
+            <ul class="flowers-image">
+              <li>
+                <div class="image_box">
+                  <a class="modal-syncer button-link-01" data-target="modal-content-0101" title="フクジュソウ">
+                  <img src="img/resize/0101_resize.jpg" alt="" class="image">
+                </a>
+                  <p class="date">01</p>
+                </div>
+              </li>
+              <li>
+                <a class="modal-syncer button-link-01" data-target="modal-content-0102" title="フクジュソウ">
+                  <div class="image_box"><img src="img/resize/0102_resize.jpg" alt="" class="image"></a>
+                <p class="date">02</p>
+                </div>
+              </li>
+              <li>
+                <a class="modal-syncer button-link-01" data-target="modal-content-0103" title="フクジュソウ">
+                  <div class="image_box"><img src="img/resize/0103_resize.jpg" alt="" class="image"></a>
+                <p class="date">03</p>
+                </div>
+              </li>
+              <li>
+                <a class="modal-syncer button-link-01" data-target="modal-content-0104" title="フクジュソウ">
+                  <div class="image_box"><img src="img/resize/0104_resize.jpg" alt="" class="image"></a>
+                <p class="date">04</p>
+                </div>
+              </li>
+              <li>
+                <a class="modal-syncer button-link-01" data-target="modal-content-0105" title="フクジュソウ">
+                  <div class="image_box"><img src="img/resize/0105_resize.jpg" alt="" class="image"></a>
+                <p class="date">05</p>
+                </div>
+              </li>
+              <li>
+                <a class="modal-syncer button-link-01" data-target="modal-content-0106" title="フクジュソウ">
+                  <div class="image_box"><img src="img/resize/0106_resize.jpg" alt="" class="image"></a>
+                <p class="date">06</p>
+                </div>
+              </li>
+              <li>
+                <a class="modal-syncer button-link-01" data-target="modal-content-0107" title="フクジュソウ">
+                  <div class="image_box"><img src="img/resize/0107_resize.jpg" alt="" class="image"></a>
+                <p class="date">07</p>
+                </div>
+              </li>
+              <li>
+                <a class="modal-syncer button-link-01" data-target="modal-content-0108" title="フクジュソウ">
+                  <div class="image_box"><img src="img/resize/0108_resize.jpg" alt="" class="image"></a>
+                <p class="date">08</p>
+                </div>
+              </li>
+              <li>
+                <a class="modal-syncer button-link-01" data-target="modal-content-0109" title="フクジュソウ">
+                  <div class="image_box"><img src="img/resize/0109_resize.jpg" alt="" class="image"></a>
+                <p class="date">09</p>
+                </div>
+              </li>
+              <li>
+                <a class="modal-syncer button-link-01" data-target="modal-content-0110" title="フクジュソウ">
+                  <div class="image_box"><img src="img/resize/0110_resize.jpg" alt="" class="image"></a>
+                <p class="date">10</p>
+                </div>
+              </li>
+              <li>
+                <a class="modal-syncer button-link-01" data-target="modal-content-0111" title="フクジュソウ">
+                  <div class="image_box"><img src="img/resize/0111_resize.jpg" alt="" class="image"></a>
+                <p class="date">11</p>
+                </div>
+              </li>
+              <li>
+                <a class="modal-syncer button-link-01" data-target="modal-content-0112" title="フクジュソウ">
+                  <div class="image_box"><img src="img/resize/0112_resize.jpg" alt="" class="image"></a>
+                <p class="date">12</p>
+                </div>
+              </li>
+              <li>
+                <a class="modal-syncer button-link-01" data-target="modal-content-0113" title="フクジュソウ">
+                  <div class="image_box"><img src="img/resize/0113_resize.jpg" alt="" class="image"></a>
+                <p class="date">13</p>
+                </div>
+              </li>
+              <li>
+                <a class="modal-syncer button-link-01" data-target="modal-content-0114" title="フクジュソウ">
+                  <div class="image_box"><img src="img/resize/0114_resize.jpg" alt="" class="image"></a>
+                <p class="date">14</p>
+                </div>
+              </li>
+              <li>
+                <a class="modal-syncer button-link-01" data-target="modal-content-0115" title="フクジュソウ">
+                  <div class="image_box"><img src="img/resize/0115_resize.jpg" alt="" class="image"></a>
+                <p class="date">15</p>
+                </div>
+              </li>
+              <li>
+                <a class="modal-syncer button-link-01" data-target="modal-content-0116" title="フクジュソウ">
+                  <div class="image_box"><img src="img/resize/0116_resize.jpg" alt="" class="image"></a>
+                <p class="date">16</p>
+                </div>
+              </li>
+              <li>
+                <a class="modal-syncer button-link-01" data-target="modal-content-0117" title="フクジュソウ">
+                  <div class="image_box"><img src="img/resize/0117_resize.jpg" alt="" class="image"></a>
+                <p class="date">17</p>
+                </div>
+              </li>
+              <li>
+                <a class="modal-syncer button-link-01" data-target="modal-content-0118" title="フクジュソウ">
+                  <div class="image_box"><img src="img/resize/0118_resize.jpg" alt="" class="image"></a>
+                <p class="date">18</p>
+                </div>
+              </li>
+              <li>
+                <a class="modal-syncer button-link-01" data-target="modal-content-0119" title="フクジュソウ">
+                  <div class="image_box"><img src="img/resize/0119_resize.jpg" alt="" class="image"></a>
+                <p class="date">19</p>
+                </div>
+              </li>
+              <li>
+                <a class="modal-syncer button-link-01" data-target="modal-content-0120" title="フクジュソウ">
+                  <div class="image_box"><img src="img/resize/0120_resize.jpg" alt="" class="image"></a>
+                <p class="date">20</p>
+                </div>
+              </li>
+              <li>
+                <a class="modal-syncer button-link-01" data-target="modal-content-0121" title="フクジュソウ">
+                  <div class="image_box"><img src="img/resize/0121_resize.jpg" alt="" class="image"></a>
+                <p class="date">21</p>
+                </div>
+              </li>
+              <li>
+                <a class="modal-syncer button-link-01" data-target="modal-content-0122" title="フクジュソウ">
+                  <div class="image_box"><img src="img/resize/0122_resize.jpg" alt="" class="image"></a>
+                <p class="date">22</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+    </article>
+
+
+    <!-- abstruct modal -->
+    <div id="modal-content" class="modal-content">
+      <a id="modal-close-01" class="button-link-01">
+      <img src="img/modal-photo/modal-photo-0101.jpg" alt="" class="modal-image" id="modal-image">
+      <img src="img/CLOSE-btn5.png" alt="" class="CLOSE-btn">
+    </a>
+      <div class="modal-flowerName">
+        <p class="words" id="words">初期化されるよ
+          <div class="modal-share">
+            <a class="facebook-share btn" href="http://www.facebook.com/share.php?u=[共有したいURL]" onclick="window.open(this.href, 'FBwindow', 'width=650, height=450, menubar=no, toolbar=no, scrollbars=yes'); return false;"><span class="fa fa-facebook"></span>花を贈る！</a>
+            <a class="twitter-share btn" href="https://twitter.com/share" data-url="共有したいURL" data-text="ツイートされる内容"><span class="fa fa-twitter"></span>花を贈る！</a>
+            <script>
+              ! function(d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0],
+                  p = /^http:/.test(d.location) ? 'http' : 'https';
+                if (!d.getElementById(id)) {
+                  js = d.createElement(s);
+                  js.id = id;
+                  js.src = p + '://platform.twitter.com/widgets.js';
+                  fjs.parentNode.insertBefore(js, fjs);
+                }
+              }(document, 'script', 'twitter-wjs');
+            </script>
+          </div>
+      </div>
+    </div>
+
+
+
+
+
+    <!--
+  <div id="modal-content-02" class="modal-content">
+    <img src="img/modal-photo/modal-photo-0102.jpg" alt="" class="modal-image">
+    <p>ハルサザンカ<br>花言葉：困難に勝つ</p>
   </div>
-  <section class="flowersGallery">
-    <div id="gallery">
-    <div class="box" id="box">
-<ul class="flowers-image">
-  <li><a class="modal-syncer button-link-01" data-target="modal-content-01" title="フクジュソウ"><div class="image_box"><img src="img/resize/0101_resize.jpg" alt="" class="image"></a><p class="date">01</p></div></li>
-  <li><a class="modal-syncer button-link-01" data-target="modal-content-02" title="フクジュソウ"><div class="image_box"><img src="img/resize/0102_resize.jpg" alt="" class="image"></a><p class="date">02</p></div></li>
-  <li><a class="modal-syncer button-link-01" data-target="modal-content-03" title="フクジュソウ"><div class="image_box"><img src="img/resize/0103_resize.jpg" alt="" class="image"></a><p class="date">03</p></div></li>
-  <li><a class="modal-syncer button-link-01" data-target="modal-content-04" title="フクジュソウ"><div class="image_box"><img src="img/resize/0104_resize.jpg" alt="" class="image"></a><p class="date">04</p></div></li>
-  <li><a class="modal-syncer button-link-01" data-target="modal-content-05" title="フクジュソウ"><div class="image_box"><img src="img/resize/0105_resize.jpg" alt="" class="image"></a><p class="date">05</p></div></li>
-  <li><a class="modal-syncer button-link-01" data-target="modal-content-06" title="フクジュソウ"><div class="image_box"><img src="img/resize/0106_resize.jpg" alt="" class="image"></a><p class="date">06</p></div></li>
-  <li><a class="modal-syncer button-link-01" data-target="modal-content-07" title="フクジュソウ"><div class="image_box"><img src="img/resize/0107_resize.jpg" alt="" class="image"></a><p class="date">07</p></div></li>
-  <li><a class="modal-syncer button-link-01" data-target="modal-content-08" title="フクジュソウ"><div class="image_box"><img src="img/resize/0108_resize.jpg" alt="" class="image"></a><p class="date">08</p></div></li>
-  <li><a class="modal-syncer button-link-01" data-target="modal-content-09" title="フクジュソウ"><div class="image_box"><img src="img/resize/0109_resize.jpg" alt="" class="image"></a><p class="date">09</p></div></li>
-  <li><a class="modal-syncer button-link-01" data-target="modal-content-10" title="フクジュソウ"><div class="image_box"><img src="img/resize/0110_resize.jpg" alt="" class="image"></a><p class="date">10</p></div></li>
-  <li><a class="modal-syncer button-link-01" data-target="modal-content-11" title="フクジュソウ"><div class="image_box"><img src="img/resize/0111_resize.jpg" alt="" class="image"></a><p class="date">11</p></div></li>
-  <li><a class="modal-syncer button-link-01" data-target="modal-content-12" title="フクジュソウ"><div class="image_box"><img src="img/resize/0112_resize.jpg" alt="" class="image"></a><p class="date">12</p></div></li>
-  <li><a class="modal-syncer button-link-01" data-target="modal-content-13" title="フクジュソウ"><div class="image_box"><img src="img/resize/0113_resize.jpg" alt="" class="image"></a><p class="date">13</p></div></li>
-  <li><a class="modal-syncer button-link-01" data-target="modal-content-14" title="フクジュソウ"><div class="image_box"><img src="img/resize/0114_resize.jpg" alt="" class="image"></a><p class="date">14</p></div></li>
-  <li><a class="modal-syncer button-link-01" data-target="modal-content-15" title="フクジュソウ"><div class="image_box"><img src="img/resize/0115_resize.jpg" alt="" class="image"></a><p class="date">15</p></div></li>
-  <li><a class="modal-syncer button-link-01" data-target="modal-content-16" title="フクジュソウ"><div class="image_box"><img src="img/resize/0116_resize.jpg" alt="" class="image"></a><p class="date">16</p></div></li>
-  <li><a class="modal-syncer button-link-01" data-target="modal-content-17" title="フクジュソウ"><div class="image_box"><img src="img/resize/0117_resize.jpg" alt="" class="image"></a><p class="date">17</p></div></li>
-  <li><a class="modal-syncer button-link-01" data-target="modal-content-18" title="フクジュソウ"><div class="image_box"><img src="img/resize/0118_resize.jpg" alt="" class="image"></a><p class="date">18</p></div></li>
-  <li><a class="modal-syncer button-link-01" data-target="modal-content-19" title="フクジュソウ"><div class="image_box"><img src="img/resize/0119_resize.jpg" alt="" class="image"></a><p class="date">19</p></div></li>
-  <li><a class="modal-syncer button-link-01" data-target="modal-content-20" title="フクジュソウ"><div class="image_box"><img src="img/resize/0120_resize.jpg" alt="" class="image"></a><p class="date">20</p></div></li>
-  <li><a class="modal-syncer button-link-01" data-target="modal-content-21" title="フクジュソウ"><div class="image_box"><img src="img/resize/0121_resize.jpg" alt="" class="image"></a><p class="date">21</p></div></li>
-  <li><a class="modal-syncer button-link-01" data-target="modal-content-22" title="フクジュソウ"><div class="image_box"><img src="img/resize/0122_resize.jpg" alt="" class="image"></a><p class="date">22</p></div></li>
-</ul>
-</div>
-</div>
- </section>
-
-</article>
-
-<div id="modal-content-01" class="modal-content">
-  <a id="modal-close-01" class="button-link-01"><img src="img/modal-photo/modal-photo-0101.jpg" alt="" class="modal-image"><img src="img/CLOSE-btn5.png" alt="" class="CLOSE-btn"></a>
-  <div class="modal-flowerName">
-    <p class="words">ピンクのカーネーション<br>花言葉：優しくてかわいい</p>
-  <div class="modal-share">
-    <a class="facebook-share btn" href="http://www.facebook.com/share.php?u=[共有したいURL]" onclick="window.open(this.href, 'FBwindow', 'width=650, height=450, menubar=no, toolbar=no, scrollbars=yes'); return false;"><span class="fa fa-facebook"></span>花を贈る！</a>
-    <a class="twitter-share btn" href="https://twitter.com/share" data-url="共有したいURL" data-text="ツイートされる内容"><span class="fa fa-twitter"></span>花を贈る！</a>
-    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+  <div id="modal-content-03" class="modal-content">
+    <img src="img/modal-photo/modal-photo-0103.jpg" alt="" class="modal-image">
+    <p>ストレリチア<br>花言葉：ひとり占め</p>
   </div>
+  <div id="modal-content-04" class="modal-content">
+    <img src="img/modal-photo/modal-photo-0104.jpg" alt="" class="modal-image">
+    <p>ブルースター<br>花言葉：幸せな愛</p>
   </div>
+  <div id="modal-content-05" class="modal-content">
+    <img src="img/modal-photo/modal-photo-0105.jpg" alt="" class="modal-image">
+    <p>ブルースター<br>花言葉：幸せな愛</p>
   </div>
-<div id="modal-content-02" class="modal-content">
-  <img src="img/modal-photo/modal-photo-0102.jpg" alt="" class="modal-image">
-  <p>ハルサザンカ<br>花言葉：困難に勝つ</p>
-</div>
-<div id="modal-content-03" class="modal-content">
-  <img src="img/modal-photo/modal-photo-0103.jpg" alt="" class="modal-image">
-  <p>ストレリチア<br>花言葉：ひとり占め</p>
-</div>
-<div id="modal-content-04" class="modal-content">
-  <img src="img/modal-photo/modal-photo-0104.jpg" alt="" class="modal-image">
-  <p>ブルースター<br>花言葉：幸せな愛</p>
-</div>
-<div id="modal-content-05" class="modal-content">
-  <img src="img/modal-photo/modal-photo-0105.jpg" alt="" class="modal-image">
-  <p>ブルースター<br>花言葉：幸せな愛</p>
-</div>
-<div id="modal-content-06" class="modal-content">
-  <img src="img/modal-photo/modal-photo-0106.jpg" alt="" class="modal-image">
-  <p>ブルースター<br>花言葉：幸せな愛</p>
-</div>
-<div id="modal-content-07" class="modal-content">
-  <img src="img/modal-photo/modal-photo-0107.jpg" alt="" class="modal-image">
-  <p>ブルースター<br>花言葉：幸せな愛</p>
-</div>
-<div id="modal-content-08" class="modal-content">
-  <img src="img/modal-photo/modal-photo-0108.jpg" alt="" class="modal-image">
-  <p>ブルースター<br>花言葉：幸せな愛</p>
-</div>
-<div id="modal-content-09" class="modal-content">
-  <img src="img/modal-photo/modal-photo-0109.jpg" alt="" class="modal-image">
-  <p>ブルースター<br>花言葉：幸せな愛</p>
-</div>
-<div id="modal-overlay-01"></div>
-<p></p>
-
-<div>今日の日にち：<span id="timeframe"></span></div>
-<div class="flowerName"><span id="flowers"></span></div>
-
-<footer>
-  <div class="credit">
-    <p>BirthdayFlowers -copyright © PIVOT,inc.</p>
+  <div id="modal-content-06" class="modal-content">
+    <img src="img/modal-photo/modal-photo-0106.jpg" alt="" class="modal-image">
+    <p>ブルースター<br>花言葉：幸せな愛</p>
   </div>
-</footer>
+  <div id="modal-content-07" class="modal-content">
+    <img src="img/modal-photo/modal-photo-0107.jpg" alt="" class="modal-image">
+    <p>ブルースター<br>花言葉：幸せな愛</p>
+  </div>
+  <div id="modal-content-08" class="modal-content">
+    <img src="img/modal-photo/modal-photo-0108.jpg" alt="" class="modal-image">
+    <p>ブルースター<br>花言葉：幸せな愛</p>
+  </div>
+  <div id="modal-content-09" class="modal-content">
+    <img src="img/modal-photo/modal-photo-0109.jpg" alt="" class="modal-image">
+    <p>ブルースター<br>花言葉：幸せな愛</p>
+  </div> -->
+    <div id="modal-overlay-01"></div>
+    <p></p>
 
-<script type="text/javascript" src="script.js"></script>
+    <div>今日の日にち：<span id="timeframe"></span></div>
+    <div class="flowerName"><span id="flowers"></span></div>
+
+    <footer>
+      <div class="credit">
+        <p>BirthdayFlowers -copyright © PIVOT,inc.</p>
+      </div>
+    </footer>
+
+    <script type="text/javascript" src="script.js"></script>
 
 
-</body>
+  </body>

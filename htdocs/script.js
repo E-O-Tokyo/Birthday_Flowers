@@ -1,119 +1,122 @@
-$(function(){
+$(function () {
 
+	showIntroModal();
+	onClickFlowerCard();
 
-  $( this ).blur() ;
+	function showIntroModal() {
+		$("body").append('<div id="modal-overlay"></div>');
+		$("#modal-overlay").fadeIn("slow");
 
-  $("body").append('<div id="modal-overlay"></div>');
-  $("#modal-overlay").fadeIn("slow");
+		// centeringModalSyncer(nowModalSyncer);
 
+		$("#introduction_Modal").fadeIn("slow");
 
-  centeringModalSyncer();
+		$("#modal-overlay,#modal-close").unbind().click(function () {
 
-  $("#introduction_Modal").fadeIn("slow");
+			$("#introduction_Modal,#modal-overlay").fadeOut("slow", function () {
+				//$('#modal-overlay').remove();
+			});
+		});
+	}
 
-  $( "#modal-overlay,#modal-close" ).unbind().click(function(){
+	function onClickFlowerCard() {
+		//////////////////////////// modal
+		var nowModalSyncer = null;
+		var modalClassSyncer = "modal-syncer";
 
-    $( "#introduction_Modal,#modal-overlay").fadeOut("slow", function(){
-      $('#modal-overlay').remove();
-    });
-  });
+		var modals = document.getElementsByClassName(modalClassSyncer);
 
-  $(window).resize(centeringModalSyncer);
+		for (var i = 0, l = modals.length; i < l; i++) {
 
-  function centeringModalSyncer() {
-    var w =$(window).width();
-    var h =$(window).height();
+			modals[i].onclick = function () {
 
-    //ここの文章抜いた
+				// jsonから月とか花言葉取ってくる
+				var dataTarget = $(this).attr("data-target");
 
-  }
-});
+				var day = Number(dataTarget.slice(-2)) - 1;
+				var monthDay = dataTarget.slice(-4);
+				console.log(monthDay);
 
+				$.getJSON("test.json", function (data) {
+					console.log(data.month);
 
-$(function(){
-  var nowModalSyncer=null;
-  var modalClassSyncer="modal-syncer";
+					$("#flowers").text(data.month);
+					$(".words").html(data.items[day].name + "<br>" + data.items[day].word);
+					$("#modal-image").attr("src", "img/modal-photo/modal-photo-" + monthDay + ".jpg")
+					console.log(data.items[day]);
+				});
 
-  var modals=document.getElementsByClassName(modalClassSyncer);
+				var modalId = "modal-content";
 
-  for(var i=0, l=modals.length; l>i; i++){
+				// data-targetが指定されてない場合
+				if (typeof (modalId) == "undefined" || !modalId || modalId == null) {
+					return false;
+				}
 
-    modals[i].onclick =function(){
+				// モーダルの指定
+				nowModalSyncer = document.getElementById(modalId);
+				console.log(nowModalSyncer);
 
-      this.blur();
+				if (nowModalSyncer == null) {
+					return false;
+				}
 
-    var target=this.getAttribute("data-target");
+				// $("body").append('<div id="modal-overlay-01"></div>');
 
-  if(typeof(target)=="undefined" ||!target||target==null){
-    return false;
-  }
-nowModalSyncer=document.getElementById(target);
-if(nowModalSyncer==null){
-  return false;
-}
+				// over layの表示
+				$("#modal-overlay-01").fadeIn("fast");
 
-$("body").append('<div id="modal-overlay-01"></div>');
-$("#modal-overlay-01").fadeIn("fast");
+				// モーダルの表示
+				$(nowModalSyncer).fadeIn("slow");
 
-centeringModalSyncer();
+				// モーダルを中心に寄せる
+				centeringModalSyncer(nowModalSyncer);
 
-$(nowModalSyncer).fadeIn("slow");
+				// overlayと閉じるボタンを押した場合
+				$("#modal-overlay-01,#modal-close-01").unbind().click(function () {
+					// モーダルとオーバレイをフェードアウト
+					$("#" + modalId + ",#modal-overlay-01").fadeOut("fast");
+					nowModalSyncer = null;
+				});
+			}
+		}
 
-$("#modal-overlay-01,#modal-close-01").unbind().click(function(){
+		// resize event
+		$(window).resize(centeringModalSyncer);
+	}
 
-  $("#" + target + ",#modal-overlay-01").fadeOut("fast",function(){
+	function centeringModalSyncer(nowModalSyncer) {
+		if (nowModalSyncer == null)
+			return false;
 
-    // $('#modal-overlay-01').remove(); いちいち消す必要がない
-  });
+		var w = $(window).width();
+		var h = $(window).height();
 
-  nowModalSyncer=null;
-});
+		var cw = $(nowModalSyncer).outerWidth();
+		var ch = $(nowModalSyncer).outerHeight();
 
-}
+		$(nowModalSyncer).css({
+			"left": ((w - cw) / 2) + "px",
+			"top": ((h - ch) / 2) + "px"
+		});
+	}
 
-}
-$(window).resize( centeringModalSyncer);
+	window.onload = function exec() {
+		var date = new Date();
 
-function centeringModalSyncer(){
-  if(nowModalSyncer==null)
-  return false;
+		var year = date.getFullYear();
+		var month = date.getMonth() + 1;
+		var day = date.getDate();
 
-  var w=$(window).width();
-  var h=$(window).height();
+		month = ('0' + month).slice(-2);
+		day = ('0' + day).slice(-2);
 
-  var cw=$(nowModalSyncer).outerWidth();
-  var ch=$(nowModalSyncer).outerHeight();
+		format = 'YYYY-MM-DD';
+		format = format.replace(/YYYY/g, year);
+		format = format.replace(/MM/g, month);
+		format = format.replace(/DD/g, day);
 
-  $(nowModalSyncer).css({"left": ((w-cw)/2)+"px","top":((h-ch)/2)+"px"});
-}
-});
-
-
-
-window.onload = function exec() {
-  var date=new Date();
-
-  var year=date.getFullYear();
-  var month=date.getMonth()+1;
-  var day=date.getDate();
-
-  month = ('0'+month).slice(-2);
-  day = ('0'+day).slice(-2);
-
-  format = 'YYYY-MM-DD';
-  format = format.replace(/YYYY/g, year);
-  format = format.replace(/MM/g, month);
-  format =format.replace(/DD/g, day);
-
-  target=document.getElementById("timeframe");
-  target.innerHTML = format;
-}
-
-
-$(document).ready(function(){
-  $.getJSON("test.json",function(data){
-      console.log(data.month);
-      // console.log("months",data[i].month);
-      $("#flowers").append(data.month.items);
-    })
+		target = document.getElementById("timeframe");
+		target.innerHTML = format;
+	}
 });
