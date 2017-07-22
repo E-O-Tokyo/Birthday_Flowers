@@ -109,23 +109,11 @@ window.onload = function exec() {
   target.innerHTML = format;
 }
 
-$(window).load(function() {
-  $('.modal-content').flexslider({
-    animation: "slide"
-  });
-});
 
-
-
-$.ajax({
-	url: 'test.json',
-	dataType: 'json',
-	data: {name: 'name'},
-	success: function(data){
-		var dataArray = data.January;
-
-		$.each(dataArray, function(i){
-			$(".flowerName").append(dataArray[i].name);
-		});
-	}
+$(document).ready(function(){
+  $.getJSON("test.json",function(data){
+      console.log(data.month);
+      // console.log("months",data[i].month);
+      $("#flowers").append(data.month.items);
+    })
 });

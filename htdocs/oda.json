@@ -16,8 +16,19 @@
   "name":"フクジュソウ",
   "word":"花言葉：幸せを招く"
  },
-}]
-}]
+]},
+{
+  "month": "February",
+  items:[
+    {
+    "date":"01",
+    "name":"フクジュソウ",
+    "word":"花言葉：幸せを招く"
+  },
+
+  ]
+}
+]
 
 
 
@@ -44,3 +55,41 @@ $(function(){
     });
   });
 });
+
+
+$(window).load(function() {
+  $('.modal-content').flexslider({
+    animation: "slide"
+  });
+});
+
+
+$.ajax({
+	url: 'test.json',
+	dataType: 'json',
+	success: function(data){
+    console.log("data",data);
+		var dataArray = data.month;
+
+		$.each(dataArray, function(i){
+			$(".flowerName").append(dataArray[i].name);
+		});
+	}
+});
+
+
+{
+    "months": [
+        {
+            "month": "January",
+            "items": [
+                {
+                    "date": "01",
+                    "name": "フクジュソウ",
+                    "word": "花言葉：幸せを招く"
+                },
+
+            ]
+        }
+    ]
+}
