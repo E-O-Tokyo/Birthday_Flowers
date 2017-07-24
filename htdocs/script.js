@@ -40,7 +40,6 @@ $(function () {
 				$.getJSON("test.json", function (data) {
 					console.log(data.month);
 
-					$("#flowers").text(data.month);
 					$(".words").html(data.items[day].name + "<br>" + data.items[day].word);
 					$("#modal-image").attr("src", "img/modal-photo/modal-photo-" + monthDay + ".jpg")
 					console.log(data.items[day]);
@@ -119,4 +118,34 @@ $(function () {
 		target = document.getElementById("timeframe");
 		target.innerHTML = format;
 	}
+	$.getJSON("test.json", function (data) {
+		console.log(data.month);
+
+		$("#month").html(data.month);
+	});
+
+
+	window.onload = function addList() {
+		var imageBox = "";
+		for (var day_i = 1; day_i <= 31; day_i++) {
+			var imageDay = ('0' + day_i).slice(-2);
+			console.log(imageDay);
+			var list = document.createElement("li");
+			list.innerHTML = '<div class="image_box"><a class = "modal-syncer button-link-01" data-target="modal-content' + imageDay + '" title="フクジュソウ"><img src="img/resize/01' + imageDay + '_resize.jpg" alt="" class="image"></a><p class="date">' + imageDay + '</p></div>';
+			var parentObject = document.getElementById("flowers-image");
+			parentObject.appendChild(list);
+			// 	var list = '<li>' +
+			// 		'<div class="image_box">' +
+			// 		'<a class="modal-syncer button-link-01" data-target="modal-content-' + monthDay + '" title="フクジュソウ">' +
+			// 		'<img src="img/resize/' + monthDay + '_resize.jpg" alt="" class="image">' +
+			// 		'</a>' +
+			// 		'<p class="date">' + monthDay + '</p>' +
+			// 		'</div>' +
+			// 		'</li>';
+			// 	html += list;
+			// }
+			// $(".flowers-image").html(html);
+		}
+	}
+
 });

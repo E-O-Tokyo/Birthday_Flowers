@@ -42,8 +42,8 @@
       <section class="flowersGallery">
         <div id="gallery">
           <div class="box" id="box">
-            <ul class="flowers-image">
-              <li>
+            <ul class="flowers-image" id="flowers-image">
+              <!-- <li>
                 <div class="image_box">
                   <a class="modal-syncer button-link-01" data-target="modal-content-0101" title="フクジュソウ">
                   <img src="img/resize/0101_resize.jpg" alt="" class="image">
@@ -175,15 +175,14 @@
                 <a class="modal-syncer button-link-01" data-target="modal-content-0122" title="フクジュソウ">
                   <div class="image_box"><img src="img/resize/0122_resize.jpg" alt="" class="image"></a>
                 <p class="date">22</p>
-                </div>
-              </li>
+                </div> -->
+
             </ul>
+            <div class="monthName"><span id="month"></span></div>
           </div>
         </div>
       </section>
-
     </article>
-
 
     <!-- abstruct modal -->
     <div id="modal-content" class="modal-content">
@@ -194,8 +193,8 @@
       <div class="modal-flowerName">
         <p class="words" id="words">初期化されるよ
           <div class="modal-share">
-            <a class="facebook-share btn" href="http://www.facebook.com/share.php?u=[共有したいURL]" onclick="window.open(this.href, 'FBwindow', 'width=650, height=450, menubar=no, toolbar=no, scrollbars=yes'); return false;"><span class="fa fa-facebook"></span>花を贈る！</a>
-            <a class="twitter-share btn" href="https://twitter.com/share" data-url="共有したいURL" data-text="ツイートされる内容"><span class="fa fa-twitter"></span>花を贈る！</a>
+            <a class="facebook-share btn" href="http://www.facebook.com/share.php?u=[共有したいURL]" onclick="window.open(this.href, 'FBwindow', 'width=650, height=450, menubar=no, toolbar=no, scrollbars=yes'); return false;"><span class="fa fa-facebook"></span>Facebookで花を贈る！</a>
+            <a class="twitter-share btn" href="https://twitter.com/share" data-url="共有したいURL" data-text="ツイートされる内容"><span class="fa fa-twitter"></span>Twitterで花を贈る！</a>
             <script>
               ! function(d, s, id) {
                 var js, fjs = d.getElementsByTagName(s)[0],
@@ -253,7 +252,8 @@
     <p></p>
 
     <div>今日の日にち：<span id="timeframe"></span></div>
-    <div class="flowerName"><span id="flowers"></span></div>
+
+
 
     <footer>
       <div class="credit">
