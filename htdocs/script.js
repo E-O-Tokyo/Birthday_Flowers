@@ -10,7 +10,7 @@ $(function () {
 			var imageDay = ('0' + day_i).slice(-2);
 			console.log(imageDay);
 			var list = document.createElement("li");
-			list.innerHTML = '<div class="image_box"><a class = "modal-syncer button-link-01" data-target="modal-content01' + imageDay + '" title="フクジュソウ"><img src="img/resize/01' + imageDay + '_resize.jpg" alt="" class="image"></a><p class="date">' + imageDay + '</p></div>';
+			list.innerHTML = '<div class="image_box"><a class = "modal-syncer button-link-01" data-target="modal-content01' + imageDay + '" title=""><img src="img/resize/01' + imageDay + '_resize.jpg" alt="" class="image"></a><p class="date">' + imageDay + '</p></div>';
 			var parentObject = document.getElementById("flowers-image");
 			parentObject.appendChild(list);
 		}
