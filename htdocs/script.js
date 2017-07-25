@@ -1,7 +1,21 @@
 $(function () {
 
+	addList();
 	showIntroModal();
 	onClickFlowerCard();
+
+	function addList() {
+		var imageBox = "";
+		for (var day_i = 1; day_i <= 31; day_i++) {
+			var imageDay = ('0' + day_i).slice(-2);
+			console.log(imageDay);
+			var list = document.createElement("li");
+			list.innerHTML = '<div class="image_box"><a class = "modal-syncer button-link-01" data-target="modal-content01' + imageDay + '" title="フクジュソウ"><img src="img/resize/01' + imageDay + '_resize.jpg" alt="" class="image"></a><p class="date">' + imageDay + '</p></div>';
+			var parentObject = document.getElementById("flowers-image");
+			parentObject.appendChild(list);
+		}
+	}
+
 
 	function showIntroModal() {
 		$("body").append('<div id="modal-overlay"></div>');
@@ -18,6 +32,7 @@ $(function () {
 			});
 		});
 	}
+	console.log("ok");
 
 	function onClickFlowerCard() {
 		//////////////////////////// modal
@@ -25,24 +40,47 @@ $(function () {
 		var modalClassSyncer = "modal-syncer";
 
 		var modals = document.getElementsByClassName(modalClassSyncer);
-
+		console.log(modals.length);
+		//ここまで OK
 		for (var i = 0, l = modals.length; i < l; i++) {
-
+			//ここから ダメ
 			modals[i].onclick = function () {
 
 				// jsonから月とか花言葉取ってくる
 				var dataTarget = $(this).attr("data-target");
 
 				var day = Number(dataTarget.slice(-2)) - 1;
-				var monthDay = dataTarget.slice(-4);
+				var monthDay = (dataTarget.slice(-4));
 				console.log(monthDay);
 
 				$.getJSON("test.json", function (data) {
 					console.log(data.month);
 
 					$(".words").html(data.items[day].name + "<br>" + data.items[day].word);
-					$("#modal-image").attr("src", "img/modal-photo/modal-photo-" + monthDay + ".jpg")
+					$("#modal-image").attr("src", "img/modal-photo/modal-photo-" + monthDay + ".jpg");
 					console.log(data.items[day]);
+
+					var metaOgDescription = document.head.children;
+					var metaLength = metaOgDescription.length;
+					for (var i = 0; i < metaLength; i++) {
+						var proper = metaOgDescription[i].getAttribute('property');
+						if (proper === 'og:description') {
+							var dis = metaOgDescription[i];
+							dis.setAttribute("content", data.items[day].name + "<br>" + data.items[day].word);
+							console.log(dis);
+						}
+					}
+					var metaOgImage = document.head.children;
+					var metaLength = metaOgImage.length;
+					for (var i = 0; i < metaLength; i++) {
+						var proper = metaOgImage[i].getAttribute("property");
+						if (proper === 'og:image') {
+							var img = metaOgImage[i];
+							img.setAttribute("content", "img/modal-photo/modal-photo-" + monthDay + ".jpg");
+							console.log(img);
+						}
+					}
+
 				});
 
 				var modalId = "modal-content";
@@ -60,7 +98,7 @@ $(function () {
 					return false;
 				}
 
-				// $("body").append('<div id="modal-overlay-01"></div>');
+				$("body").append('<div id="modal-overlay-01"></div>');
 
 				// over layの表示
 				$("#modal-overlay-01").fadeIn("fast");
@@ -79,7 +117,6 @@ $(function () {
 				});
 			}
 		}
-
 		// resize event
 		$(window).resize(centeringModalSyncer);
 	}
@@ -117,35 +154,16 @@ $(function () {
 
 		target = document.getElementById("timeframe");
 		target.innerHTML = format;
+		console.log(format);
 	}
+
 	$.getJSON("test.json", function (data) {
 		console.log(data.month);
 
 		$("#month").html(data.month);
+
+		console.log(document.head.children[7]);
+		console.log(document.head.childNodes[5]);
+
 	});
-
-
-	window.onload = function addList() {
-		var imageBox = "";
-		for (var day_i = 1; day_i <= 31; day_i++) {
-			var imageDay = ('0' + day_i).slice(-2);
-			console.log(imageDay);
-			var list = document.createElement("li");
-			list.innerHTML = '<div class="image_box"><a class = "modal-syncer button-link-01" data-target="modal-content' + imageDay + '" title="フクジュソウ"><img src="img/resize/01' + imageDay + '_resize.jpg" alt="" class="image"></a><p class="date">' + imageDay + '</p></div>';
-			var parentObject = document.getElementById("flowers-image");
-			parentObject.appendChild(list);
-			// 	var list = '<li>' +
-			// 		'<div class="image_box">' +
-			// 		'<a class="modal-syncer button-link-01" data-target="modal-content-' + monthDay + '" title="フクジュソウ">' +
-			// 		'<img src="img/resize/' + monthDay + '_resize.jpg" alt="" class="image">' +
-			// 		'</a>' +
-			// 		'<p class="date">' + monthDay + '</p>' +
-			// 		'</div>' +
-			// 		'</li>';
-			// 	html += list;
-			// }
-			// $(".flowers-image").html(html);
-		}
-	}
-
 });
