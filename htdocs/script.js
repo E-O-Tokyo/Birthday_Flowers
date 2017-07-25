@@ -164,6 +164,10 @@ $(function () {
 
 		console.log(document.head.children[7]);
 		console.log(document.head.childNodes[5]);
+	});
 
+	$("#box").scroll(function () {
+		console.log("scroooolllllll");
+		// div要素内でスクロールされた時に実行する処理
 	});
 });
