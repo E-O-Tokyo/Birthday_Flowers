@@ -1,3 +1,35 @@
+for (var month_i = 1; month_i <= 12; month_i++) {
+	var monthCo = ('0' + month_i).slice(-2);
+	console.log(monthCo);
+
+
+	// ここの上で12回for文を回す
+	var dataTarget = document.getElementsByClassName("modal-syncer");
+	console.log(dataTarget.length);
+	var dataTargetLength = dataTarget.lenght;
+	for (var num_i < 0; num_i <= dataTargetLength; i++) {
+		var attr = dataTarget[i],
+			getAttribute("data-target");
+		if (dataTarget === 01) {
+			var monthName = $.getJSON(data.month[現在値 + 1]);
+			$("#month").html(monthName)
+		}
+	}
+}
+var metaOgImage = document.head.children
+console.log(metaOgImage);
+var metaLength = metaOgImage.length;
+console.log(metaOgImage.length);
+for (var i = 0; i < metaLength; i++) {
+	var proper = metaOgImage[i].getAttribute("property");
+	if (proper === 'og:image') {
+		var img = metaOgImage[i];
+		img.setAttribute("content", "img/modal-photo/modal-photo-" + monthDay + ".jpg");
+		console.log(img);
+	}
+}
+
+
 [{
 		month: 1,
 		items: []

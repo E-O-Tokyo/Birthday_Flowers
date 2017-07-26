@@ -48,6 +48,7 @@ $(function () {
 
 				// jsonから月とか花言葉取ってくる
 				var dataTarget = $(this).attr("data-target");
+				console.log(this);
 
 				var day = Number(dataTarget.slice(-2)) - 1;
 				var monthDay = (dataTarget.slice(-4));
@@ -72,6 +73,7 @@ $(function () {
 					}
 					var metaOgImage = document.head.children;
 					var metaLength = metaOgImage.length;
+					console.log(metaOgImage.length);
 					for (var i = 0; i < metaLength; i++) {
 						var proper = metaOgImage[i].getAttribute("property");
 						if (proper === 'og:image') {
@@ -155,19 +157,26 @@ $(function () {
 		target = document.getElementById("timeframe");
 		target.innerHTML = format;
 		console.log(format);
+
 	}
 
 	$.getJSON("test.json", function (data) {
 		console.log(data.month);
 
 		$("#month").html(data.month);
-
-		console.log(document.head.children[7]);
-		console.log(document.head.childNodes[5]);
 	});
 
-	$("#box").scroll(function () {
-		console.log("scroooolllllll");
-		// div要素内でスクロールされた時に実行する処理
+	$(".box").scroll(function () {
+		var monthCoordinate = document.getElementById("month");
+		var rect = monthCoordinate.getBoundingClientRect();
+		console.log(rect.left);
+		console.log(rect.top);
+		console.log(rect.width);
+		console.log(rect.height);
+		var imageBox = "";
+		for (var day_i = 1; day_i <= 31; day_i++) {
+			var imageDay = ('0' + day_i).slice(-2);
+			console.log(imageDay);
+		}
 	});
 });
