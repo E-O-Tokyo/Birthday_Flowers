@@ -157,7 +157,6 @@ $(function () {
 		target = document.getElementById("timeframe");
 		target.innerHTML = format;
 		console.log(format);
-
 	}
 
 	$.getJSON("test.json", function (data) {
@@ -166,17 +165,24 @@ $(function () {
 		$("#month").html(data.month);
 	});
 
+
 	$(".box").scroll(function () {
-		var monthCoordinate = document.getElementById("month");
-		var rect = monthCoordinate.getBoundingClientRect();
-		console.log(rect.left);
-		console.log(rect.top);
-		console.log(rect.width);
-		console.log(rect.height);
-		var imageBox = "";
-		for (var day_i = 1; day_i <= 31; day_i++) {
-			var imageDay = ('0' + day_i).slice(-2);
-			console.log(imageDay);
+		for (var month_i = 1; month_i <= 12; month_i++) {
+			var monthCo = ('0' + month_i).slice(-2);
+			console.log(monthCo);
+
+			var monthCoordinate = document.getElementById("month");
+			var rect = monthCoordinate.getBoundingClientRect();
+			console.log(rect.left);
+			console.log(rect.top);
+			console.log(rect.width);
+			console.log(rect.height);
+
+			var dataTarget = document.getElementsByClassName("modal-syncer");
+			console.log(dataTarget);
+			var dataTargetAttr = dataTarget[1].getAttribute("data-target");
+			console.log(dataTargetAttr);
 		}
+
 	});
 });
