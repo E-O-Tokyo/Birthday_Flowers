@@ -6,7 +6,7 @@ $(function () {
 
 	function addList() {
 		var imageBox = "";
-		for (var day_i = 1; day_i <= 31; day_i++) {
+		for (var day_i = 1; day_i <= 366; day_i++) {
 			var imageDay = ('0' + day_i).slice(-2);
 			console.log(imageDay);
 			var list = document.createElement("li");
@@ -137,6 +137,11 @@ $(function () {
 			"left": ((w - cw) / 2) + "px",
 			"top": ((h - ch) / 2) + "px"
 		});
+
+		var windowWidth1 = window.innerWidth;
+		console.log(windowWidth1);
+		var rS1 = windowWidth1 / 2;
+		console.log(rS1);
 	}
 
 	window.onload = function exec() {
@@ -157,13 +162,29 @@ $(function () {
 		target = document.getElementById("timeframe");
 		target.innerHTML = format;
 		console.log(format);
+		var windowWidth = window.innerWidth;
+		console.log(windowWidth);
+		var rS = windowWidth / 2;
+		console.log(rS);
 	}
+
+	var monthCoordinate;
+	var rect;
 
 	$.getJSON("test.json", function (data) {
 		console.log(data.month);
 
 		$("#month").html(data.month);
+
+		monthCoordinate = document.getElementById("month");
+		rect = monthCoordinate.getBoundingClientRect();
+		console.log(rect.left);
+		console.log(rect.top);
+		console.log(rect.width);
+		console.log(rect.height);
+
 	});
+
 
 
 	$(".box").scroll(function () {
@@ -171,18 +192,14 @@ $(function () {
 			var monthCo = ('0' + month_i).slice(-2);
 			console.log(monthCo);
 
-			var monthCoordinate = document.getElementById("month");
-			var rect = monthCoordinate.getBoundingClientRect();
-			console.log(rect.left);
-			console.log(rect.top);
-			console.log(rect.width);
-			console.log(rect.height);
 
-			var dataTarget = document.getElementsByClassName("modal-syncer");
-			console.log(dataTarget);
-			var dataTargetAttr = dataTarget[1].getAttribute("data-target");
+			var dataTargets = document.getElementsByClassName("modal-syncer");
+			console.log(dataTargets);
+			var dataTargetAttr = dataTargets[0].getAttribute("data-target");
 			console.log(dataTargetAttr);
 		}
 
 	});
+
+
 });
