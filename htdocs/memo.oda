@@ -142,6 +142,35 @@ $.ajax({
     ]
 }
 
+$(".box").scroll(function () {
+	for (var month_i = 1; month_i <= 12; month_i++) {
+		var monthCo = ('0' + month_i).slice(-2);
+		console.log(monthCo);
+
+
+		var dataTargets = document.getElementsByClassName("modal-syncer");
+		console.log(dataTargets);
+		var dataTargetAttr = dataTargets[0].getAttribute("data-target");
+		console.log(dataTargetAttr);
+	}
+
+});
+
+$(".facebook-share").click(function () {
+	alert('clickイベントが発生しました。');
+});
+
+
+var monthCoordinate;
+var rect;
+
+monthCoordinate = document.getElementById("month");
+rect = monthCoordinate.getBoundingClientRect();
+console.log(rect.left);
+console.log(rect.top);
+console.log(rect.width);
+console.log(rect.height);
+
 function centeringModalSyncer() {
 	var w = $(window).width();
 	var h = $(window).height();
@@ -149,6 +178,56 @@ function centeringModalSyncer() {
 	//ここの文章抜いた
 
 }
+
+window.onload = function exec() {
+	var date = new Date();
+
+	var year = date.getFullYear();
+	var month = date.getMonth() + 1;
+	var day = date.getDate();
+
+	month = ('0' + month).slice(-2);
+	day = ('0' + day).slice(-2);
+
+	format = 'YYYY-MM-DD';
+	format = format.replace(/YYYY/g, year);
+	format = format.replace(/MM/g, month);
+	format = format.replace(/DD/g, day);
+
+	target = document.getElementById("timeframe");
+	target.innerHTML = format;
+	console.log(format);
+	var windowWidth = window.innerWidth;
+	console.log(windowWidth);
+	var rS = windowWidth / 2;
+	console.log(rS);
+}
+
+
+var metaOgUrl = document.head.children;
+var metaLength = metaOgUrl.length;
+for (var i = 0; i < metaLength; i++) {
+	var proper = metaOgUrl[i].getAttribute("property");
+	if (proper === "og:url") {
+
+
+		// var prmUrl = location.search = monthDay;
+		// console.log(prmUrl);
+	}
+}
+
+var metaOgUrl = document.head.children;
+var metaLength = metaOgUrl.length;
+for (var i = 0; i < metaLength; i++) {
+	var proper = metaOgUrl[i].getAttribute("property");
+	if (proper === "og:url") {
+
+
+		// var prmUrl = location.search = monthDay;
+		// console.log(prmUrl);
+	}
+}
+
 
 addList();
 
