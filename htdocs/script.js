@@ -6,7 +6,7 @@ $(function () {
 
 	function addList() {
 		var imageBox = "";
-		for (var day_i = 1; day_i <= 366; day_i++) {
+		for (var day_i = 1; day_i <= 31; day_i++) {
 			var imageDay = ('0' + day_i).slice(-2);
 			console.log(imageDay);
 			var list = document.createElement("li");
@@ -46,6 +46,7 @@ $(function () {
 			//ここから ダメ
 			modals[i].onclick = function () {
 
+
 				// jsonから月とか花言葉取ってくる
 				var dataTarget = $(this).attr("data-target");
 				console.log(this);
@@ -60,6 +61,8 @@ $(function () {
 					$(".words").html(data.items[day].name + "<br>" + data.items[day].word);
 					$("#modal-image").attr("src", "img/modal-photo/modal-photo-" + monthDay + ".jpg");
 					console.log(data.items[day]);
+					// $(".modal-syncer").append("href", "monthDay");
+
 
 					var metaOgDescription = document.head.children;
 					var metaLength = metaOgDescription.length;
@@ -81,9 +84,22 @@ $(function () {
 							img.setAttribute("content", "img/modal-photo/modal-photo-" + monthDay + ".jpg");
 							console.log(img);
 						}
+
+						// var metaOgUrl = document.head.children;
+						// var metaLength = metaOgUrl.length;
+						// for (var i = 0; i < metaLength; i++) {
+						// 	var proper = metaOgUrl[i].getAttribute("property");
+						// 	if (proper === "og:url") {
+						//
+						//
+						// 		// var prmUrl = location.search = monthDay;
+						// 		// console.log(prmUrl);
+						// 	}
+						// }
 					}
 
 				});
+
 
 				var modalId = "modal-content";
 
@@ -109,7 +125,7 @@ $(function () {
 				$(nowModalSyncer).fadeIn("slow");
 
 				// モーダルを中心に寄せる
-				centeringModalSyncer(nowModalSyncer);
+				// centeringModalSyncer(nowModalSyncer);
 
 				// overlayと閉じるボタンを押した場合
 				$("#modal-overlay-01,#modal-close-01").unbind().click(function () {
@@ -124,11 +140,15 @@ $(function () {
 	}
 
 	function centeringModalSyncer(nowModalSyncer) {
+
+		var win = document.defaultView;
+		console.log(win);
 		if (nowModalSyncer == null)
 			return false;
 
 		var w = $(window).width();
 		var h = $(window).height();
+		console.log(h)
 
 		var cw = $(nowModalSyncer).outerWidth();
 		var ch = $(nowModalSyncer).outerHeight();
@@ -201,5 +221,8 @@ $(function () {
 
 	});
 
+	$(".facebook-share").click(function () {
+		alert('clickイベントが発生しました。');
 
+	});
 });
