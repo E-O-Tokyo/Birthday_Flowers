@@ -1,16 +1,16 @@
 $(function () {
 
-	addList();
+	addFlowerCards();
 	showIntroModal();
 	onClickFlowerCard();
 
-	function addList() {
+	function addFlowerCards() {
 		var imageBox = "";
+		var parentObject = document.getElementById("flowers-image");
 		for (var day_i = 1; day_i <= 31; day_i++) {
 			var imageDay = ('0' + day_i).slice(-2);
 			var list = document.createElement("li");
-			list.innerHTML = '<div class="image_box"><a class = "modal-syncer button-link-01" data-target="modal-content01' + imageDay + '" title=""><img src="img/resize/01' + imageDay + '_resize.jpg" alt="" class="image"></a><p class="date">' + imageDay + '</p></div>';
-			var parentObject = document.getElementById("flowers-image");
+			list.innerHTML = '<div class="image_box"><a class = "flower-card button-link-01" data-target="card-content01' + imageDay + '" title=""><img src="img/resize/01' + imageDay + '_resize.jpg" alt="" class="image"></a><p class="date">' + imageDay + '</p></div>';
 			parentObject.appendChild(list);
 		}
 	}
@@ -19,28 +19,22 @@ $(function () {
 		$("body").append('<div id="modal-overlay"></div>');
 		$("#modal-overlay").fadeIn("slow");
 
-		// centeringModalSyncer(nowModalSyncer);
-
 		$("#introduction_Modal").fadeIn("slow");
 
 		$("#modal-overlay,#modal-close").unbind().click(function () {
 
-			$("#introduction_Modal,#modal-overlay").fadeOut("slow", function () {
-				//$('#modal-overlay').remove();
-			});
+			$("#introduction_Modal,#modal-overlay").fadeOut("slow");
 		});
 	}
 
 	function onClickFlowerCard() {
 		//////////////////////////// modal
 		var nowModalSyncer = null;
-		var modalClassSyncer = "modal-syncer";
+		var cards = document.getElementsByClassName("flower-card");
 
-		var modals = document.getElementsByClassName(modalClassSyncer);
+		for (var i = 0, l = cards.length; i < l; i++) {
 
-		for (var i = 0, l = modals.length; i < l; i++) {
-
-			modals[i].onclick = function () {
+			cards[i].onclick = function () {
 
 
 				// jsonから月とか花言葉取ってくる
@@ -53,36 +47,13 @@ $(function () {
 
 					$(".words").html(data.items[day].name + "<br>" + data.items[day].word);
 					$("#modal-image").attr("src", "img/modal-photo/modal-photo-" + monthDay + ".jpg");
-
-					var metaOgDescription = document.head.children;
-					var metaLength = metaOgDescription.length;
-					for (var i = 0; i < metaLength; i++) {
-						var proper = metaOgDescription[i].getAttribute('property');
-						if (proper === 'og:description') {
-							var dis = metaOgDescription[i];
-							dis.setAttribute("content", data.items[day].name + "<br>" + data.items[day].word);
-						}
-					}
-					var metaOgImage = document.head.children;
-					var metaLength = metaOgImage.length;
-					for (var i = 0; i < metaLength; i++) {
-						var proper = metaOgImage[i].getAttribute("property");
-						if (proper === 'og:image') {
-							var img = metaOgImage[i];
-							img.setAttribute("content", "img/modal-photo/modal-photo-" + monthDay + ".jpg");
-						}
-					}
 				});
 
-				var modalId = "modal-content";
+				var cardId = "card-content";
 
-				// data-targetが指定されてない場合
-				if (typeof (modalId) == "undefined" || !modalId || modalId == null) {
-					return false;
-				}
 
 				// モーダルの指定
-				nowModalSyncer = document.getElementById(modalId);
+				nowModalSyncer = document.getElementById(cardId);
 
 				if (nowModalSyncer == null) {
 					return false;
@@ -96,13 +67,10 @@ $(function () {
 				// モーダルの表示
 				$(nowModalSyncer).fadeIn("slow");
 
-				// モーダルを中心に寄せる
-				// centeringModalSyncer(nowModalSyncer);
-
 				// overlayと閉じるボタンを押した場合
 				$("#modal-overlay-01,#modal-close-01").unbind().click(function () {
 					// モーダルとオーバレイをフェードアウト
-					$("#" + modalId + ",#modal-overlay-01").fadeOut("fast");
+					$("#" + cardId + ",#modal-overlay-01").fadeOut("fast");
 					nowModalSyncer = null;
 				});
 			}

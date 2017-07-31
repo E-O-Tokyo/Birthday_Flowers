@@ -17,24 +17,21 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link href="https://fonts.googleapis.com/earlyaccess/sawarabimincho.css" rel="stylesheet" />
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-    <script type="text/javascript" src="jquery-3.2.1.min.js"></script>
-    <script type="text/javascript" src="jquery.cookie.js"></script>
   </head>
 
   <body>
     <header class="header">
       <div class="service_title">BirthdayFlowers</div>
-      <!-- <img src="img/free_schedule.png" alt="" class="calendar"> -->
     </header>
     <div class="modal-part">
-      <div id="introduction_Modal">
+      <div id="introduction_Modal" class="introduction_Modal">
         <p>BirthdayFlowers</p>
         <p>あの人の誕生花はなんですか？</p>
         <p class="message">花の写真と花言葉の<br>メッセージを送ろう！</p>
         <p><a id="modal-close" class="button-link">START</a></p>
       </div>
     </div>
-    <div id="modal-overlay"></div>
+    <div id="modal-overlay" class="modal-overlay"></div>
 
 
     <article class="contents">
@@ -52,44 +49,48 @@
           <div class="monthName"><span id="month"></span></div>
         </div>
       </section>
-      <!-- abstruct modal -->
-      <div id="abstruct-modal" class="abstruct-modal">
-        <div id="modal-content" class="modal-content">
-          <a id="modal-close-01" class="button-link-01">
-        <img src="" alt="" class="modal-image" id="modal-image">
-        <img src="img/CLOSE-btn5.png" alt="" class="CLOSE-btn">
-      </a>
-          <div class="modal-flowerName">
-            <p class="words" id="words">初期化されるよ
-              <a class="mo" href=""></a>
-              <div class="modal-share">
-                <a class="facebook-share btn" href="http://www.facebook.com/share.php?u=http://birthday-flowers.pj.pivot.jp/" onclick="window.open(this.href, 'FBwindow', 'width=650, height=450, menubar=no, toolbar=no, scrollbars=yes'); return false;"><span class="fa fa-facebook"></span>Facebookで花を贈る！</a>
-                <a class="twitter-share btn" href="https://twitter.com/share" data-url="http://birthday-flowers.pj.pivot.jp/" data-text="ツイートされる内容"><span class="fa fa-twitter"></span>Twitterで花を贈る！</a>
-                <script>
-                  ! function(d, s, id) {
-                    var js, fjs = d.getElementsByTagName(s)[0],
-                      p = /^http:/.test(d.location) ? 'http' : 'https';
-                    if (!d.getElementById(id)) {
-                      js = d.createElement(s);
-                      js.id = id;
-                      js.src = p + '://platform.twitter.com/widgets.js';
-                      fjs.parentNode.insertBefore(js, fjs);
-                    }
-                  }(document, 'script', 'twitter-wjs');
-                </script>
-              </div>
+    </article>
+
+
+    <!-- abstruct modal -->
+    <div id="abstruct-modal" class="abstruct-modal">
+      <div id="card-content" class="card-content">
+        <a id="modal-close-01" class="button-link-01">
+      <img src="" alt="" class="modal-image" id="modal-image">
+      <img src="img/CLOSE-btn5.png" alt="" class="close-btn">
+        </a>
+        <div class="modal-flowerName">
+          <p class="words" id="words"></p>
+          <a class="mo" href=""></a>
+          <div class="modal-share">
+            <a class="facebook-share btn" href="http://www.facebook.com/share.php?u=http://birthday-flowers.pj.pivot.jp/" onclick="window.open(this.href, 'FBwindow', 'width=650, height=450, menubar=no, toolbar=no, scrollbars=yes'); return false;"><span class="fa fa-facebook"></span>Facebookで花を贈る！</a>
+            <a class="twitter-share btn" href="https://twitter.com/share" data-url="http://birthday-flowers.pj.pivot.jp/" data-text="ツイートされる内容"><span class="fa fa-twitter"></span>Twitterで花を贈る！</a>
+            <script>
+              ! function(d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0],
+                  p = /^http:/.test(d.location) ? 'http' : 'https';
+                if (!d.getElementById(id)) {
+                  js = d.createElement(s);
+                  js.id = id;
+                  js.src = p + '://platform.twitter.com/widgets.js';
+                  fjs.parentNode.insertBefore(js, fjs);
+                }
+              }(document, 'script', 'twitter-wjs');
+            </script>
           </div>
         </div>
       </div>
-      <div id="modal-overlay-01"></div>
-    </article>
-    <!-- <div>今日の日にち：<span id="timeframe"></span></div> -->
-    <footer>
+    </div>
+    <div id="modal-overlay-01" class="modal-overlay-01"></div>
+
+    <footer class="footer">
       <div class="credit">
         <p>BirthdayFlowers -copyright © PIVOT,inc.</p>
       </div>
     </footer>
+    <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
 
-    <script type="text/javascript" src="script.js"></script>
+
 
   </body>
