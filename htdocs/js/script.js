@@ -7,7 +7,8 @@ $(function () {
 	function addFlowerCards() {
 		var imageBox = "";
 		var parentObject = document.getElementById("flowers-image");
-		for (var day_i = 1; day_i <= 31; day_i++) {
+		var monthDays = 31;
+		for (var day_i = 1; day_i <= monthDays; day_i++) {
 			var imageDay = ('0' + day_i).slice(-2);
 			var list = document.createElement("li");
 			list.innerHTML = '<div class="image_box"><a class = "flower-card button-link-01" data-target="card-content01' + imageDay + '" title=""><img src="img/resize/01' + imageDay + '_resize.jpg" alt="" class="image"></a><p class="date">' + imageDay + '</p></div>';
