@@ -29,7 +29,7 @@ $(function () {
 
 	function onClickFlowerCard() {
 		//////////////////////////// modal
-		var nowModalSyncer = null;
+		var flowerCardModal = null;
 		var cards = document.getElementsByClassName("flower-card");
 
 		for (var i = 0, l = cards.length; i < l; i++) {
@@ -53,9 +53,9 @@ $(function () {
 
 
 				// モーダルの指定
-				nowModalSyncer = document.getElementById(cardId);
+				flowerCardModal = document.getElementById(cardId);
 
-				if (nowModalSyncer == null) {
+				if (flowerCardModal == null) {
 					return false;
 				}
 
@@ -65,13 +65,13 @@ $(function () {
 				$("#modal-overlay-01").fadeIn("fast");
 
 				// モーダルの表示
-				$(nowModalSyncer).fadeIn("slow");
+				$(flowerCardModal).fadeIn("slow");
 
 				// overlayと閉じるボタンを押した場合
 				$("#modal-overlay-01,#modal-close-01").unbind().click(function () {
 					// モーダルとオーバレイをフェードアウト
 					$("#" + cardId + ",#modal-overlay-01").fadeOut("fast");
-					nowModalSyncer = null;
+					flowerCardModal = null;
 				});
 			}
 		}
@@ -79,20 +79,20 @@ $(function () {
 		$(window).resize(centeringModalSyncer);
 	}
 
-	function centeringModalSyncer(nowModalSyncer) {
+	function centeringModalSyncer(flowerCardModal) {
 
 		var win = document.defaultView;
 		console.log(win);
-		if (nowModalSyncer == null)
+		if (flowerCardModal == null)
 			return false;
 
 		var w = $(window).width();
 		var h = $(window).height();
 
-		var cw = $(nowModalSyncer).outerWidth();
-		var ch = $(nowModalSyncer).outerHeight();
+		var cw = $(flowerCardModal).outerWidth();
+		var ch = $(flowerCardModal).outerHeight();
 
-		$(nowModalSyncer).css({
+		$(flowerCardModal).css({
 			"left": ((w - cw) / 2) + "px",
 			"top": ((h - ch) / 2) + "px"
 		});
