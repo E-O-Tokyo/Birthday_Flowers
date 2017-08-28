@@ -50,8 +50,19 @@ $(function () {
 					$("#modal-image").attr("src", "img/modal-photo/modal-photo-" + monthDay + ".jpg");
 				});
 
-				var cardId = "card-content";
+				$('#card-content').addClass('active');
+				$('.change-btn').click(function () {
+					var $displaySlide = $('.active');
+					$displaySlide.removeClass('active');
+					if ($(this).hasClass('next-btn')) {
+						$displaySlide.next().addClass('active');
+					} else {
+						$displaySlide.prev().addClass('active');
+					}
+				});
 
+
+				var cardId = "card-content";
 
 				// モーダルの指定
 				flowerCardModal = document.getElementById(cardId);
@@ -76,6 +87,7 @@ $(function () {
 				});
 			}
 		}
+
 		// resize event
 		$(window).resize(centeringModalSyncer);
 	}
@@ -83,7 +95,6 @@ $(function () {
 	function centeringModalSyncer(flowerCardModal) {
 
 		var win = document.defaultView;
-		console.log(win);
 		if (flowerCardModal == null)
 			return false;
 

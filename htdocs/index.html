@@ -1,97 +1,101 @@
 <!DOCTYPE html>
 <html lang="ja">
 
-  <head>
-    <title>BirthdayFlowers</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta name="description" content="あの人の誕生花はなんですか？ 花の写真と花言葉のメッセージを送ろう！">
-    <meta name="keywords" content="誕生日, 誕生花, 花言葉, メッセージ, 花">
+<head>
+  <title>BirthdayFlowers</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta name="description" content="あの人の誕生花はなんですか？ 花の写真と花言葉のメッセージを送ろう！">
+  <meta name="keywords" content="誕生日, 誕生花, 花言葉, メッセージ, 花">
 
-    <meta property="og:url" content="http://birthday-flowers.pj.pivot.jp/" />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="BirthdayFlowers" />
-    <meta property="og:description" content="あの人の誕生花はなんですか？ 花の写真と花言葉のメッセージを送ろう！" />
-    <meta property="og:image" content="img/birthdayFlowers.jpg" />
-    <meta name="twitter:card" content="img/birthdayFlowers.jpg" />
+  <meta property="og:url" content="http://birthday-flowers.pj.pivot.jp/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="BirthdayFlowers" />
+  <meta property="og:description" content="あの人の誕生花はなんですか？ 花の写真と花言葉のメッセージを送ろう！" />
+  <meta property="og:image" content="img/birthdayFlowers.jpg" />
+  <meta name="twitter:card" content="img/birthdayFlowers.jpg" />
 
 
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link href="https://fonts.googleapis.com/earlyaccess/sawarabimincho.css" rel="stylesheet" />
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-  </head>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link href="https://fonts.googleapis.com/earlyaccess/sawarabimincho.css" rel="stylesheet" />
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+</head>
 
-  <body>
-    <header class="header">
-      <div class="service_title">BirthdayFlowers</div>
-    </header>
-    <div class="modal-part">
-      <div id="introduction_Modal" class="introduction_Modal">
-        <p>BirthdayFlowers</p>
-        <p>あの人の誕生花はなんですか？</p>
-        <p class="message">花の写真と花言葉の<br>メッセージを送ろう！</p>
-        <p><a id="modal-close" class="button-link">START</a></p>
-      </div>
+<body>
+  <header class="header">
+    <div class="service_title">BirthdayFlowers</div>
+  </header>
+  <div class="modal-part">
+    <div id="introduction_Modal" class="introduction_Modal">
+      <p>BirthdayFlowers</p>
+      <p>あの人の誕生花はなんですか？</p>
+      <p class="message">花の写真と花言葉の<br>メッセージを送ろう！</p>
+      <p><a id="modal-close" class="button-link">START</a></p>
     </div>
-    <div id="modal-overlay" class="modal-overlay"></div>
+  </div>
+  <div id="modal-overlay" class="modal-overlay"></div>
 
 
-    <article class="contents">
-      <div class="content-title">
-        <h1>あの人の誕生日に<br>花の写真と花言葉のメッセージを送ろう</h1>
-      </div>
-      <section class="flowersGallery">
-        <div id="gallery">
-          <div class="box" id="box">
-            <ul class="flowers-image" id="flowers-image">
+  <article class="contents">
+    <div class="content-title">
+      <h1>あの人の誕生日に<br>花の写真と花言葉のメッセージを送ろう</h1>
+    </div>
+    <section class="flowersGallery">
+      <div id="gallery">
+        <div class="box" id="box">
+          <ul class="flowers-image" id="flowers-image">
 
 
-            </ul>
-          </div>
-          <div class="monthName"><span id="month"></span></div>
+          </ul>
         </div>
-      </section>
-    </article>
+        <div class="monthName"><span id="month"></span></div>
+      </div>
+    </section>
+  </article>
 
-    <!-- abstruct modal -->
-    <div id="abstruct-modal" class="abstruct-modal">
-      <div id="card-content" class="card-content">
-        <a id="modal-close-01" class="button-link-01">
+  <!-- abstruct modal -->
+  <div id="abstruct-modal" class="abstruct-modal">
+    <div id="card-content" class="card-content">
+      <a id="modal-close-01" class="button-link-01">
       <img src="" alt="" class="modal-image" id="modal-image">
       <img src="img/CLOSE-btn5.png" alt="" class="close-btn">
         </a>
-        <div class="modal-flowerName">
-          <p class="words" id="words"></p>
-          <a class="mo" href=""></a>
-          <div class="modal-share">
-            <a class="facebook-share btn" href="http://www.facebook.com/share.php?u=http://birthday-flowers.pj.pivot.jp/" onclick="window.open(this.href, 'FBwindow', 'width=650, height=450, menubar=no, toolbar=no, scrollbars=yes'); return false;"><span class="fa fa-facebook"></span>Facebookで花を贈る！</a>
-            <a class="twitter-share btn" href="https://twitter.com/share" data-url="http://birthday-flowers.pj.pivot.jp/" data-text="ツイートされる内容"><span class="fa fa-twitter"></span>Twitterで花を贈る！</a>
-            <script>
-              ! function(d, s, id) {
-                var js, fjs = d.getElementsByTagName(s)[0],
-                  p = /^http:/.test(d.location) ? 'http' : 'https';
-                if (!d.getElementById(id)) {
-                  js = d.createElement(s);
-                  js.id = id;
-                  js.src = p + '://platform.twitter.com/widgets.js';
-                  fjs.parentNode.insertBefore(js, fjs);
-                }
-              }(document, 'script', 'twitter-wjs');
-            </script>
-          </div>
+      <div class="change-btn-wrapper">
+        <div class="change-btn prev-btn">← 前へ</div>
+        <div class="change-btn next-btn">次へ →</div>
+      </div>
+      <div class="modal-flowerName">
+        <p class="words" id="words"></p>
+        <div class="modal-share">
+          <a class="facebook-share btn" href="http://www.facebook.com/share.php?u=http://birthday-flowers.pj.pivot.jp/" onclick="window.open(this.href, 'FBwindow', 'width=650, height=450, menubar=no, toolbar=no, scrollbars=yes'); return false;"><span class="fa fa-facebook"></span>Facebookで花を贈る！</a>
+          <a class="twitter-share btn" href="https://twitter.com/share" data-url="http://birthday-flowers.pj.pivot.jp/" data-text="ツイートされる内容"><span class="fa fa-twitter"></span>Twitterで花を贈る！</a>
+          <script>
+            ! function(d, s, id) {
+              var js, fjs = d.getElementsByTagName(s)[0],
+                p = /^http:/.test(d.location) ? 'http' : 'https';
+              if (!d.getElementById(id)) {
+                js = d.createElement(s);
+                js.id = id;
+                js.src = p + '://platform.twitter.com/widgets.js';
+                fjs.parentNode.insertBefore(js, fjs);
+              }
+            }(document, 'script', 'twitter-wjs');
+
+          </script>
         </div>
       </div>
     </div>
-    <div id="modal-overlay-01" class="modal-overlay-01"></div>
+  </div>
+  <div id="modal-overlay-01" class="modal-overlay-01"></div>
 
-    <footer class="footer">
-      <div class="credit">
-        <p>BirthdayFlowers  -© PIVOT,inc.</p>
-      </div>
-    </footer>
-    <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
-    <script type="text/javascript" src="js/script.js"></script>
+  <footer class="footer">
+    <div class="credit">
+      <p>BirthdayFlowers -© PIVOT,inc.</p>
+    </div>
+  </footer>
+  <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="js/script.js"></script>
 
 
 
-  </body>
+</body>

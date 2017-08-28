@@ -194,6 +194,28 @@ ul.flowers-image li {
   margin: 8px;
 }
 
+.change-btn-wrapper {
+  width: 500px;
+  margin: 20px auto;
+  font-size: 18px;
+}
+
+.change-btn-wrapper:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+.prev-btn {
+  cursor: pointer;
+  float: left;
+}
+
+.next-btn {
+  cursor: pointer;
+  float: right;
+}
+
 .facebook-share {
   background-color: #3b5998;
 }
